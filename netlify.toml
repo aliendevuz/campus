@@ -1,5 +1,5 @@
 [build]
-  base = "campus/frontend"
+  base = "frontend"
   command = "bun run build"
   publish = "dist"  # yoki build (frameworkga qarab)
 
