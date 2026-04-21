@@ -1,16 +1,40 @@
-# React + Vite
+Campus App | backend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+frontend/README.md
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Bu UI qismi uchun:
 
-## React Compiler
+frontend nima qiladi
+pages/components haqida qisqacha
+backend bilan qanday ulanadi
+env
+run instructions
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Misol:
 
-## Expanding the ESLint configuration
+```
+# Frontend
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Description
+Campus app frontend (UI).
+
+## Tech Stack
+- React / Vue / Next.js
+
+## Setup
+npm install
+npm run dev
+
+## Environment Variables
+- VITE_API_URL yoki NEXT_PUBLIC_API_URL
+
+## Pages
+- Login
+- Register
+- Dashboard
+
+## Backend Integration
+Backend API bilan HTTP orqali ulanadi.
+```
+

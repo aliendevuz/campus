@@ -1,0 +1,55 @@
+Issue Type,Summary,Description,Epic Link,Priority
+Epic,AUTH & USER MANAGEMENT,Authentication and authorization system,,High
+Task,Login API,Implement /auth/login with JWT and role support,AUTH & USER MANAGEMENT,High
+Task,Auth Middleware,JWT validation middleware for protected routes,AUTH & USER MANAGEMENT,High
+Task,Role Middleware,Restrict admin endpoints by role,AUTH & USER MANAGEMENT,High
+
+Epic,ADMIN - STUDENT MANAGEMENT,Admin manages students,,High
+Task,Create Student,POST /admin/students endpoint,ADMIN - STUDENT MANAGEMENT,High
+Task,Get Students List,GET /admin/students endpoint,ADMIN - STUDENT MANAGEMENT,High
+Task,Update Student,PUT /admin/students/{id},ADMIN - STUDENT MANAGEMENT,High
+Task,Delete Student,DELETE /admin/students/{id},ADMIN - STUDENT MANAGEMENT,High
+
+Epic,ADMIN - SCHEDULE,Admin manages schedules,,High
+Task,Create Schedule,POST /admin/schedules,ADMIN - SCHEDULE,Medium
+Task,Update Schedule,PUT /admin/schedules/{id},ADMIN - SCHEDULE,Medium
+Task,Delete Schedule,DELETE /admin/schedules/{id},ADMIN - SCHEDULE,Medium
+
+Epic,ADMIN - GRADES,Admin manages grades,,High
+Task,Create Grade,POST /admin/grades,ADMIN - GRADES,Medium
+Task,Update Grade,PUT /admin/grades/{id},ADMIN - GRADES,Medium
+Task,Delete Grade,DELETE /admin/grades/{id},ADMIN - GRADES,Medium
+
+Epic,STUDENT - CORE FEATURES,Student main functionality,,High
+Task,Get Profile,GET /me endpoint,STUDENT - CORE FEATURES,High
+Task,Update Profile,PUT /me endpoint,STUDENT - CORE FEATURES,High
+Task,Get Schedule,GET /schedule endpoint,STUDENT - CORE FEATURES,High
+Task,Get Grades,GET /grades endpoint,STUDENT - CORE FEATURES,High
+Task,Get Academic Progress,GET /progress with GPA calculation,STUDENT - CORE FEATURES,Medium
+
+Epic,FACULTY,Faculty directory features,,Medium
+Task,Admin CRUD Faculty,Manage faculty (create/update/delete),FACULTY,Medium
+Task,Get Faculty (Student),List and detail endpoints,FACULTY,Medium
+
+Epic,CONSULTATIONS,Consultation booking system,,Medium
+Task,Book Consultation,POST /consultations,CONSULTATIONS,Medium
+Task,Get My Consultations,GET /consultations,CONSULTATIONS,Medium
+Task,Update Consultation Status,Admin approves/rejects,CONSULTATIONS,Medium
+
+Epic,PORTFOLIO,Student achievements,,Low
+Task,Add Achievement,POST /achievements,PORTFOLIO,Low
+Task,Get Achievements,GET /achievements,PORTFOLIO,Low
+Task,Delete Achievement,DELETE /achievements/{id},PORTFOLIO,Low
+
+Epic,FRONTEND - ADMIN PANEL,Admin UI,,High
+Task,Admin Login Page,UI for admin login,FRONTEND - ADMIN PANEL,High
+Task,Students Page,Table + CRUD modals,FRONTEND - ADMIN PANEL,High
+Task,Schedule Page,Manage schedules UI,FRONTEND - ADMIN PANEL,Medium
+Task,Grades Page,Manage grades UI,FRONTEND - ADMIN PANEL,Medium
+
+Epic,FRONTEND - STUDENT APP,Student UI,,High
+Task,Student Login Page,UI for login,FRONTEND - STUDENT APP,High
+Task,Dashboard,Summary page,FRONTEND - STUDENT APP,Medium
+Task,Schedule Page (Student),Display schedule,FRONTEND - STUDENT APP,High
+Task,Grades Page (Student),Display grades,FRONTEND - STUDENT APP,High
+Task,Profile Page,View/edit profile,FRONTEND - STUDENT APP,High
