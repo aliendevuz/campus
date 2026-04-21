@@ -1,0 +1,9 @@
+[build]
+  base = "campus/frontend"
+  command = "bun run build"
+  publish = "dist"  # yoki build (frameworkga qarab)
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
