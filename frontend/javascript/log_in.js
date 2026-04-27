@@ -24,7 +24,7 @@ loginBtn.addEventListener("click", async () => {
 
       alert("Login successful!");
 
-      window.location.href = "/frontend/html/dashboard.html";
+      window.location.href = "dashboard.html";
     } else {
       alert(data.message);
     }

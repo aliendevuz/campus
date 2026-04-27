@@ -1,7 +1,7 @@
 const token = localStorage.getItem("token");
 
 if (!token) {
-  window.location.href = "/frontend/html/log_in.html";
+  window.location.href = "log_in.html";
 }
 
 async function loadDashboard() {
@@ -16,7 +16,7 @@ async function loadDashboard() {
 
     if (!res.ok) {
       localStorage.removeItem("token");
-      window.location.href = "/frontend/html/log_in.html";
+      window.location.href = "log_in.html";
       return;
     }
 
@@ -37,5 +37,5 @@ document
     localStorage.removeItem("token");
     localStorage.removeItem("userName");
 
-    window.location.href = "/frontend/html/log_in.html";
+    window.location.href = "log_in.html";
   });

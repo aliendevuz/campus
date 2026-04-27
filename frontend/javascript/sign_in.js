@@ -22,7 +22,7 @@ registerBtn.addEventListener("click", async () => {
 
     if (res.ok) {
       alert("Registration successful!");
-      window.location.href = "/frontend/html/log_in.html";
+      window.location.href = "log_in.html";
     } else {
       alert(data.message);
     }
