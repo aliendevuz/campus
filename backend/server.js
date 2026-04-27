@@ -13,7 +13,23 @@ const messageRoutes = require("./routes/messageRoutes");
 const paymentRoutes = require("./routes/paymentRoutes");
 connectDB();
 
-app.use(cors());
+const allowedOrigins = [
+  "http://localhost:5500",
+  "http://localhost:5501",
+  "https://campus-302.netlify.app",
+];
+
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      }
+
+      return callback(new Error("Not allowed by CORS"));
+    },
+  })
+);
 app.use(express.json());
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
