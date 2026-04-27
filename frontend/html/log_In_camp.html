@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page_title or "Campus App - Student Login" }}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/frontend/css/log_in_camp.css">
+</head>
+<body>
+    <main class="login-shell">
+        <section class="login-card" aria-labelledby="login-title">
+            <div class="brand-mark" aria-hidden="true">
+                <svg viewBox="0 0 64 64" role="presentation">
+                    <path d="M10 24 32 8l22 16" />
+                    <path d="M16 24h32" />
+                    <path d="M20 24v20" />
+                    <path d="M30 24v20" />
+                    <path d="M40 24v20" />
+                    <path d="M50 24v20" />
+                    <path d="M16 44h36" />
+                </svg>
+            </div>
+
+            <h1 class="brand-title" id="login-title">Campus App</h1>
+            <p class="login-copy">here u can sign in to the platform as a <a href="#" class="copy-link">student</a></p>
+
+            <form class="login-form" id="loginForm" novalidate>
+                <label class="input-field">
+                    <span class="field-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" role="presentation">
+                            <path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Z" />
+                            <path d="M5 20a7 7 0 0 1 14 0" />
+                        </svg>
+                    </span>
+                    <input
+                        type="text"
+                        id="fullName"
+                        name="fullName"
+                        autocomplete="name"
+                        placeholder="Name and Surname"
+                        aria-label="Name and Surname"
+                    >
+                </label>
+
+                <label class="input-field">
+                    <span class="field-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" role="presentation">
+                            <path d="M4 7h16" />
+                            <path d="M5 7l7 6 7-6" />
+                            <path d="M5 7h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1Z" />
+                        </svg>
+                    </span>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        autocomplete="email"
+                        placeholder="E-mail"
+                        aria-label="E-mail"
+                    >
+                </label>
+
+                <label class="input-field">
+                    <span class="field-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" role="presentation">
+                            <path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Z" />
+                            <path d="M5 20a7 7 0 0 1 14 0" />
+                        </svg>
+                    </span>
+                    <input
+                        type="text"
+                        id="studentId"
+                        name="studentId"
+                        autocomplete="off"
+                        placeholder="Student ID"
+                        aria-label="Student ID"
+                    >
+                </label>
+
+                <label class="input-field">
+                    <span class="field-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" role="presentation">
+                            <path d="M7 10V8a5 5 0 0 1 10 0v2" />
+                            <path d="M6 10h12v10H6z" />
+                            <path d="M12 14v2" />
+                        </svg>
+                    </span>
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        autocomplete="current-password"
+                        placeholder="Password"
+                        aria-label="Password"
+                    >
+                </label>
+
+                <button class="submit-button" type="submit">Login Now</button>
+                <p class="form-message" id="formMessage" aria-live="polite"></p>
+            </form>
+        </section>
+    </main>
+
+    <script src="/frontend/javascript/log_in.js"></script>
+</body>
+</html>

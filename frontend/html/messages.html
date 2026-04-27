@@ -1,0 +1,330 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teachemy Messages</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+  <link rel="stylesheet" href="/frontend/css/messages.css" />
+</head>
+<body>
+  <div class="dashboard">
+    <aside class="sidebar">
+      <div>
+        <div class="brand">
+          <div class="brand-icon"></div>
+          <div>
+            <h1>TEACHEMY</h1>
+            <p>MAIN NAVIGATION</p>
+          </div>
+        </div>
+
+        <div class="nav-section">
+          <span class="nav-label">MAIN NAVIGATION</span>
+          <ul class="nav-list">
+            <li><a href="/frontend/html/dashboard.html"><i class="fa-solid fa-chart-column"></i>Dashboard</a></li>
+            <li><a href="/frontend/html/subject.html"><i class="fa-solid fa-table-cells-large"></i>Subject</a></li>
+            <li class="active"><a href="#"><i class="fa-solid fa-message"></i>Messages <span class="badge">4</span></a></li>
+            <li><a href="/frontend/html/schedule.html"><i class="fa-solid fa-calendar-days"></i>Schedule</a></li>
+            <li><a href="/frontend/html/settings.html"><i class="fa-solid fa-gear"></i>Settings</a></li>
+          </ul>
+        </div>
+
+        <div class="nav-section">
+          <span class="nav-label">SUPPORT</span>
+          <ul class="nav-list">
+            <li><a href="/frontend/html/library.html"><i class="fa-solid fa-book"></i>Library</a></li>
+            <li><a href="/frontend/html/help.html"><i class="fa-solid fa-flag"></i>Help</a></li>
+          </ul>
+        </div>
+
+        <div class="nav-section">
+          <span class="nav-label">OTHERS</span>
+          <ul class="nav-list">
+            <li><a href="/frontend/html/mini_games.html"><i class="fa-solid fa-puzzle-piece"></i>Mini games</a></li>
+            <li><a href="/frontend/html/payment_history.html"><i class="fa-solid fa-money-bill-wave"></i>Payment history</a></li>
+          </ul>
+        </div>
+      </div>
+
+    <div class="profile-card">
+        <span class="profile-title">Profile</span>
+        <div class="profile-row">
+          <a href="/frontend/html/profile.html">
+        <div class="avatar"></div>
+          <div>
+            <h4>Amanda</h4>
+            <p>Admin Account</p>
+          </div>
+          </a>
+          <i class="fa-solid fa-ellipsis"></i>
+        </div>
+      </div>
+      <button class="logout-btn"><i class="fa-solid fa-right-from-bracket"></i>Logout</button>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="chatSearch" placeholder="Search for anything..." />
+        </div>
+
+        <nav class="top-links">
+          <a href="#">Blog</a>
+          <a href="#">About us</a>
+          <a href="#">Science</a>
+          <a href="#">Contact us</a>
+        </nav>
+
+        <div class="user-dropdown" id="userDropdown">
+  <button class="user-box user-trigger" id="userTrigger">
+    <span class="bell-btn">
+      <i class="fa-solid fa-bell"></i>
+      <span>8</span>
+    </span>
+
+    <div class="top-avatar"></div>
+    <p>Elise Beverley</p>
+    <i class="fa-solid fa-caret-down user-caret"></i>
+  </button>
+
+  <div class="user-menu" id="userMenu">
+    <a href="/frontend/html/profile.html">Account</a>
+    <a href="/frontend/html/settings.html">Settings</a>
+    <a href="#">Verify</a>
+    <a href="#">Exit</a>
+  </div>
+</div>
+
+      </header>
+
+      <section class="message-layout">
+        <aside class="chat-list-panel">
+          <div class="chat-panel-header">
+            <div>
+              <h2>Inbox <span>(98)</span></h2>
+            </div>
+            <div class="chat-panel-actions">
+              <button class="new-btn">+ Button</button>
+              <button class="tiny-btn"><i class="fa-solid fa-sliders"></i></button>
+            </div>
+          </div>
+
+          <div class="chat-list" id="chatList">
+            <div class="chat-item active" data-name="Alihanov Bahrom">
+              <div class="chat-avatar"></div>
+              <div class="chat-info">
+                <h4>Alihanov Bahrom</h4>
+                <p>I need to solve my life</p>
+              </div>
+              <div class="chat-meta">
+                <small>2m</small>
+                <span>2</span>
+              </div>
+            </div>
+
+            <div class="chat-item" data-name="Jalolov Omadbek">
+              <div class="chat-avatar"></div>
+              <div class="chat-info">
+                <h4>Jalolov Omadbek</h4>
+                <p>Hey iconcase</p>
+              </div>
+              <div class="chat-meta">
+                <small>2m</small>
+                <span>1</span>
+              </div>
+            </div>
+
+            <div class="chat-item selected" data-name="Daniel Stephens">
+              <div class="chat-avatar"></div>
+              <div class="chat-info">
+                <h4>Daniel Stephens</h4>
+                <p><i class="fa-solid fa-microphone-lines"></i> Audio Message</p>
+              </div>
+              <div class="chat-meta">
+                <small>2m</small>
+                <span>1</span>
+              </div>
+            </div>
+
+            <div class="chat-item" data-name="Victoria Owens">
+              <div class="chat-avatar"></div>
+              <div class="chat-info">
+                <h4>Victoria Owens</h4>
+                <p>Yeah, I agree with you</p>
+              </div>
+              <div class="chat-meta"><small>2m</small></div>
+            </div>
+
+            <div class="chat-item" data-name="Louis Patterson">
+              <div class="chat-avatar"></div>
+              <div class="chat-info">
+                <h4>Louis Patterson</h4>
+                <p>Can you please show m...</p>
+              </div>
+              <div class="chat-meta"><small>2m</small></div>
+            </div>
+
+            <div class="chat-item" data-name="Ozi Briandito">
+              <div class="chat-avatar"></div>
+              <div class="chat-info">
+                <h4>Ozi Briandito</h4>
+                <p><i class="fa-solid fa-microphone-lines"></i> Audio Message</p>
+              </div>
+              <div class="chat-meta"><small>2m</small></div>
+            </div>
+
+            <div class="chat-item" data-name="Zulia Daniel">
+              <div class="chat-avatar"></div>
+              <div class="chat-info">
+                <h4>Zulia Daniel</h4>
+                <p>Your iconset are very a...</p>
+              </div>
+              <div class="chat-meta"><small>2m</small></div>
+            </div>
+
+            <div class="chat-item" data-name="Silvia Amanda">
+              <div class="chat-avatar"></div>
+              <div class="chat-info">
+                <h4>Silvia Amanda</h4>
+                <p>Haha, thank you very m...</p>
+              </div>
+              <div class="chat-meta"><small>2m</small></div>
+            </div>
+
+            <div class="chat-item" data-name="Brian Imanuel">
+              <div class="chat-avatar"></div>
+              <div class="chat-info">
+                <h4>Brian Imanuel</h4>
+                <p>Yea, I agree with you abou...</p>
+              </div>
+              <div class="chat-meta"><small>2m</small></div>
+            </div>
+
+            <div class="chat-item" data-name="Shanti Anderson">
+              <div class="chat-avatar"></div>
+              <div class="chat-info">
+                <h4>Shanti Anderson</h4>
+                <p>Can you please share m...</p>
+              </div>
+              <div class="chat-meta"><small>2m</small></div>
+            </div>
+
+            <div class="chat-item" data-name="Gian Andrew">
+              <div class="chat-avatar"></div>
+              <div class="chat-info">
+                <h4>Gian Andrew</h4>
+                <p>Great!</p>
+              </div>
+              <div class="chat-meta"><small>2m</small></div>
+            </div>
+
+            <div class="chat-item" data-name="Andrew Brian">
+              <div class="chat-avatar"></div>
+              <div class="chat-info">
+                <h4>Andrew Brian</h4>
+                <p>Haha, thanks!</p>
+              </div>
+              <div class="chat-meta"><small>2m</small></div>
+            </div>
+          </div>
+        </aside>
+
+        <section class="conversation-panel">
+          <div class="conversation-header">
+            <div class="person-block">
+              <div class="chat-avatar large"></div>
+              <div>
+                <h3 id="activeChatName">Daniel Stephens</h3>
+                <p><span class="online-dot"></span>Online</p>
+              </div>
+            </div>
+
+            <div class="conversation-actions">
+              <button><i class="fa-solid fa-video"></i></button>
+              <button><i class="fa-solid fa-phone"></i></button>
+            </div>
+          </div>
+
+          <div class="messages-area" id="messagesArea">
+            <div class="date-chip">26 March</div>
+
+            <div class="message incoming">
+              <div class="bubble">
+                Yeah, your iconset are very awesome and usefull for my web app. Great job! 👏🏽
+              </div>
+            </div>
+
+            <div class="message incoming narrow">
+              <div class="bubble">
+                By the way, can you please show me the preview of your new product?
+              </div>
+              <span class="time">12:46 PM</span>
+            </div>
+
+            <div class="divider">
+              <span>New Message</span>
+            </div>
+
+            <div class="message outgoing media-message">
+              <div class="bubble purple">
+                <p>Sure 🙂</p>
+                <div class="preview-grid">
+                  <div></div>
+                  <div></div>
+                </div>
+              </div>
+              <span class="time">12:48 PM <i class="fa-solid fa-check-double"></i></span>
+            </div>
+
+            <div class="message incoming audio-message">
+              <div class="audio-box light">
+                <button class="play-btn"><i class="fa-solid fa-play"></i></button>
+                <div class="wave"></div>
+                <small>00:48</small>
+              </div>
+              <span class="time">08:26 AM</span>
+            </div>
+
+            <div class="message outgoing audio-message">
+              <div class="audio-box dark">
+                <button class="play-btn"><i class="fa-solid fa-play"></i></button>
+                <div class="wave"></div>
+                <small>00:48</small>
+              </div>
+              <span class="time">08:26 AM <i class="fa-solid fa-check-double"></i></span>
+            </div>
+          </div>
+
+          <form class="message-input-bar" id="messageForm">
+            <div class="input-wrap">
+              <input type="text" id="messageInput" placeholder="Type a messages..." />
+              <div class="input-tools">
+                <button type="button"><i class="fa-regular fa-microphone"></i></button>
+                <button type="button"><i class="fa-solid fa-paperclip"></i></button>
+                <button type="button"><i class="fa-solid fa-circle-plus"></i></button>
+              </div>
+            </div>
+            <button type="submit" class="send-btn">
+              <i class="fa-solid fa-paper-plane"></i>
+            </button>
+          </form>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <script src="/frontend/javascript/messages.js"></script>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teachemy Schedule</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+  <link rel="stylesheet" href="/frontend/css/schedule.css" />
+</head>
+<body>
+  <div class="dashboard">
+    <aside class="sidebar">
+      <div>
+        <div class="brand">
+          <div class="brand-icon"></div>
+          <div>
+            <h1>TEACHEMY</h1>
+            <p>MAIN NAVIGATION</p>
+          </div>
+        </div>
+
+        <div class="nav-section">
+          <span class="nav-label">MAIN NAVIGATION</span>
+          <ul class="nav-list">
+            <li><a href="/frontend/html/dashboard.html"><i class="fa-solid fa-chart-column"></i>Dashboard</a></li>
+            <li><a href="/frontend/html/subject.html"><i class="fa-solid fa-table-cells-large"></i>Subject</a></li>
+            <li><a href="/frontend/html/messages.html"><i class="fa-solid fa-message"></i>Messages <span class="badge">4</span></a></li>
+            <li class="active"><a href="/frontend/html/schedule.html"><i class="fa-solid fa-calendar-days"></i>Schedule</a></li>
+            <li><a href="/frontend/html/settings.html"><i class="fa-solid fa-gear"></i>Settings</a></li>
+          </ul>
+        </div>
+
+        <div class="nav-section">
+          <span class="nav-label">SUPPORT</span>
+          <ul class="nav-list">
+            <li><a href="/frontend/html/library.html"><i class="fa-solid fa-book"></i>Library</a></li>
+            <li><a href="/frontend/html/help.html"><i class="fa-solid fa-flag"></i>Help</a></li>
+          </ul>
+        </div>
+
+        <div class="nav-section">
+          <span class="nav-label">OTHERS</span>
+          <ul class="nav-list">
+            <li><a href="/frontend/html/mini_games.html"><i class="fa-solid fa-puzzle-piece"></i>Mini games</a></li>
+            <li><a href="/frontend/html/payment_history.html"><i class="fa-solid fa-money-bill-wave"></i>Payment history</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="profile-card">
+        <span class="profile-title">Profile</span>
+        <div class="profile-row">
+          <a href="/frontend/html/profile.html">
+        <div class="avatar"></div>
+          <div>
+            <h4>Amanda</h4>
+            <p>Admin Account</p>
+          </div>
+          </a>
+          <i class="fa-solid fa-ellipsis"></i>
+        </div>
+      </div>
+      <button class="logout-btn"><i class="fa-solid fa-right-from-bracket"></i>Logout</button>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" placeholder="Search for anything..." />
+        </div>
+
+        <nav class="top-links">
+          <a href="#">Blog</a>
+          <a href="#">About us</a>
+          <a href="#">Science</a>
+          <a href="#">Contact us</a>
+        </nav>
+
+        <div class="user-dropdown" id="userDropdown">
+  <button class="user-box user-trigger" id="userTrigger">
+    <span class="bell-btn">
+      <i class="fa-solid fa-bell"></i>
+      <span>8</span>
+    </span>
+
+    <div class="top-avatar"></div>
+    <p>Elise Beverley</p>
+    <i class="fa-solid fa-caret-down user-caret"></i>
+  </button>
+
+  <div class="user-menu" id="userMenu">
+    <a href="/frontend/html/profile.html">Account</a>
+    <a href="/frontend/html/settings.html">Settings</a>
+    <a href="#">Verify</a>
+    <a href="#">Exit</a>
+  </div>
+</div>
+
+      </header>
+
+      <section class="schedule-layout">
+        <aside class="task-column">
+          <div class="task-card profile-mini">
+            <div class="student-mini">
+              <div class="purple-dot"></div>
+              <h3>Elise Beverley</h3>
+            </div>
+          </div>
+
+          <div class="task-card todo-card">
+            <button class="add-task-btn" id="addTaskBtn">+ Add a task</button>
+
+            <ul class="task-list" id="taskList">
+              <li><span class="circle"></span><span>Do some listening</span></li>
+              <li><span class="circle"></span><span>Prepare for the lesson</span></li>
+              <li><span class="circle"></span><span>Bring an extra material</span></li>
+              <li><span class="circle"></span><span>Don't sleep during the lesson</span></li>
+              <li><span class="circle"></span><span>Have a lunch at 1 p.m.</span></li>
+            </ul>
+          </div>
+
+          <div class="task-card completed-card">
+            <div class="completed-head">
+              <h4>Complited</h4>
+              <button id="toggleCompleted"><i class="fa-solid fa-angle-down"></i></button>
+            </div>
+
+            <ul class="completed-list" id="completedList">
+              <li><span class="status green"></span>Do morning exercises</li>
+              <li><span class="status green"></span>Do homework</li>
+              <li><span class="status red"></span>Don't forget books</li>
+            </ul>
+          </div>
+        </aside>
+
+        <section class="calendar-card">
+          <div class="calendar-header">
+            <div>
+              <h2 id="monthLabel">January 2024</h2>
+            </div>
+
+            <div class="calendar-top-center">
+              <strong>Today</strong>
+              <span id="todayLabel">17 Jan</span>
+            </div>
+
+            <div class="calendar-controls">
+              <button id="prevMonth"><i class="fa-solid fa-angle-left"></i></button>
+              <div class="view-switch">
+                <span>Day</span>
+                <span>Week</span>
+                <span class="active">Month</span>
+              </div>
+              <button id="nextMonth"><i class="fa-solid fa-angle-right"></i></button>
+            </div>
+          </div>
+
+          <div class="weekdays">
+            <div>Sun</div>
+            <div>Mon</div>
+            <div>Tue</div>
+            <div>Wed</div>
+            <div>Thu</div>
+            <div>Fri</div>
+            <div>Sat</div>
+          </div>
+
+          <div class="calendar-grid" id="calendarGrid"></div>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <script src="/frontend/javascript/schedule.js"></script>
+</body>
+</html>

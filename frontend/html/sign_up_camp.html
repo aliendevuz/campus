@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page_title }}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/frontend/css/sign_up_camp.css">
+</head>
+<body>
+    <main class="login-shell">
+        <section class="login-card" aria-labelledby="login-title">
+            <div class="brand-mark" aria-hidden="true">
+                <svg viewBox="0 0 64 64" role="presentation">
+                    <path d="M10 24 32 8l22 16" />
+                    <path d="M16 24h32" />
+                    <path d="M20 24v20" />
+                    <path d="M30 24v20" />
+                    <path d="M40 24v20" />
+                    <path d="M50 24v20" />
+                    <path d="M16 44h36" />
+                </svg>
+            </div>
+
+            <h1 class="brand-title" id="login-title">Campus App</h1>
+            <p class="login-copy">
+                here u can log in to the platform as a <a href="#" class="copy-link">new user</a>
+            </p>
+
+            <form class="login-form" id="loginForm" novalidate>
+                <label class="input-field">
+                    <span class="field-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" role="presentation">
+                            <path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Z" />
+                            <path d="M5 20a7 7 0 0 1 14 0" />
+                        </svg>
+                    </span>
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        inputmode="tel"
+                        autocomplete="tel"
+                        placeholder="Phone Number"
+                        aria-label="Phone Number"
+                    >
+                </label>
+
+                <label class="input-field">
+                    <span class="field-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" role="presentation">
+                            <path d="M7 10V8a5 5 0 0 1 10 0v2" />
+                            <path d="M6 10h12v10H6z" />
+                            <path d="M12 14v2" />
+                        </svg>
+                    </span>
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        autocomplete="current-password"
+                        placeholder="Password"
+                        aria-label="Password"
+                    >
+                </label>
+
+                <button class="submit-button" type="submit">sign up</button>
+                <p class="form-message" id="formMessage" aria-live="polite"></p>
+            </form>
+        </section>
+    </main>
+
+    <script src="/frontend/javascript/sign_up_camp.js"></script>
+</body>
+</html>

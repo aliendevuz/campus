@@ -1,0 +1,314 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teachemy Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+  <link rel="stylesheet" href="/frontend/css/dashboard.css"/>
+</head>
+<body>
+  <div class="dashboard">
+    <aside class="sidebar">
+      <div>
+        <div class="brand">
+          <div class="brand-icon"></div>
+          <div>
+            <h1>TEACHEMY</h1>
+            <p>MAIN NAVIGATION</p>
+          </div>
+        </div>
+
+        <div class="nav-section">
+          <span class="nav-label">MAIN NAVIGATION</span>
+          <ul class="nav-list">
+            <li class="active"><a href="#"><i class="fa-solid fa-chart-column"></i>Dashboard</a></li>
+            <li><a href="/frontend/html/subject.html"><i class="fa-solid fa-book-open"></i>Subject</a></li>
+            <li><a href="/frontend/html/messages.html"><i class="fa-solid fa-message"></i>Messages <span class="badge">4</span></a></li>
+            <li><a href="/frontend/html/schedule.html"><i class="fa-solid fa-calendar-days"></i>Schedule</a></li>
+            <li><a href="/frontend/html/settings.html"><i class="fa-solid fa-gear"></i>Settings</a></li>
+          </ul>
+        </div>
+
+        <div class="nav-section">
+          <span class="nav-label">SUPPORT</span>
+          <ul class="nav-list">
+            <li><a href="/frontend/html/library.html"><i class="fa-solid fa-book"></i>Library</a></li>
+            <li><a href="/frontend/html/help.html"><i class="fa-solid fa-flag"></i>Help</a></li>
+          </ul>
+        </div>
+
+        <div class="nav-section">
+          <span class="nav-label">OTHERS</span>
+          <ul class="nav-list">
+            <li><a href="/frontend/html/mini_games.html"><i class="fa-solid fa-puzzle-piece"></i>Mini games</a></li>
+            <li><a href="/frontend/html/payment_history.html"><i class="fa-solid fa-money-bill-wave"></i>Payment history</a></li>
+          </ul>
+        </div>
+      </div>
+
+        <div class="profile-card">
+        <span class="profile-title">Profile</span>
+        <div class="profile-row">
+          <a href="/frontend/html/profile.html">
+        <div class="avatar"></div>
+          <div>
+            <h4 id="sideUserName">User</h4>
+            <p>Admin Account</p>
+          </div>
+          </a>
+          <i class="fa-solid fa-ellipsis"></i>
+        </div>
+      </div>
+      <button class="logout-btn" id="logout-btn"><i class="fa-solid fa-right-from-bracket"></i>Logout</button>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" placeholder="Search for anything..." />
+        </div>
+
+        <nav class="top-links">
+          <a href="#">Blog</a>
+          <a href="#">About us</a>
+          <a href="#">Science</a>
+          <a href="#">Contact us</a>
+        </nav>
+
+        <div class="user-dropdown" id="userDropdown">
+  <button class="user-box user-trigger" id="userTrigger">
+    <span class="bell-btn">
+      <i class="fa-solid fa-bell"></i>
+      <span>8</span>
+    </span>
+
+    <div class="top-avatar"></div>
+    <p id="topUserName">User</p>
+    <i class="fa-solid fa-caret-down user-caret"></i>
+  </button>
+
+  <div class="user-menu" id="userMenu">
+    <a href="/frontend/html/profile.html">Account</a>
+    <a href="/frontend/html/settings.html">Settings</a>
+    <a href="#">Verify</a>
+    <a href="#">Exit</a>
+  </div>
+</div>
+      </header>
+
+      <section>
+        <h2 class="section-title">Your Courses</h2>
+        <div class="courses">
+          <div class="course-card">
+            <div class="course-dot"></div>
+            <h3>Drawing &amp; Art Class</h3>
+            <p>With Mrs. Elaine Rognard</p>
+            <div class="progress-row">
+              <div class="progress"><span style="width: 24%"></span></div>
+              <small>12 of 48</small>
+            </div>
+          </div>
+
+          <div class="course-card">
+            <div class="course-dot"></div>
+            <h3>English Class</h3>
+            <p>With Mrs. Elaine Rognard</p>
+            <div class="progress-row">
+              <div class="progress"><span style="width: 42%"></span></div>
+              <small>20 of 48</small>
+            </div>
+          </div>
+
+          <div class="course-card">
+            <div class="course-dot"></div>
+            <h3>Mathematic Class</h3>
+            <p>With Mrs. Elaine Rognard</p>
+            <div class="progress-row">
+              <div class="progress"><span style="width: 20%"></span></div>
+              <small>10 of 48</small>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-grid">
+        <div class="left-panel">
+          <h2 class="section-title">Learning Activity</h2>
+
+          <div class="activity-card">
+            <div class="activity-header">
+              <div>
+                <h3>Ongoing Class</h3>
+                <div class="legend">
+                  <span><i class="pink"></i>Drawing &amp; Art Class</span>
+                  <span><i class="yellow"></i>English Class</span>
+                  <span><i class="green"></i>Mathematic Class</span>
+                </div>
+              </div>
+              <button class="filter-btn"><i class="fa-regular fa-calendar"></i>Last 2 Weeks <i class="fa-solid fa-caret-down"></i></button>
+            </div>
+
+            <div class="chart-area">
+              <div class="grid-lines"></div>
+              <div class="bars">
+                <div class="bar-group">
+                  <div class="bar pink" style="height: 72%"></div>
+                  <div class="bar yellow" style="height: 38%"></div>
+                  <div class="bar green" style="height: 28%"></div>
+                  <span>Mar 26</span>
+                </div>
+                <div class="bar-group">
+                  <div class="bar pink" style="height: 94%"></div>
+                  <div class="bar yellow" style="height: 25%"></div>
+                  <div class="bar green" style="height: 30%"></div>
+                  <span>Mar 27</span>
+                </div>
+                <div class="bar-group">
+                  <div class="bar pink" style="height: 68%"></div>
+                  <div class="bar yellow" style="height: 54%"></div>
+                  <div class="bar green" style="height: 46%"></div>
+                  <span>Mar 28</span>
+                </div>
+                <div class="bar-group">
+                  <div class="bar pink" style="height: 82%"></div>
+                  <div class="bar yellow" style="height: 34%"></div>
+                  <div class="bar green" style="height: 49%"></div>
+                  <span>Mar 29</span>
+                </div>
+                <div class="bar-group">
+                  <div class="bar pink" style="height: 63%"></div>
+                  <div class="bar yellow" style="height: 52%"></div>
+                  <div class="bar green" style="height: 55%"></div>
+                  <span>Mar 30</span>
+                </div>
+                <div class="bar-group">
+                  <div class="bar pink" style="height: 72%"></div>
+                  <div class="bar yellow" style="height: 44%"></div>
+                  <div class="bar green" style="height: 53%"></div>
+                  <span>Mar 31</span>
+                </div>
+                <div class="bar-group">
+                  <div class="bar pink" style="height: 70%"></div>
+                  <div class="bar yellow" style="height: 60%"></div>
+                  <div class="bar green" style="height: 42%"></div>
+                  <span>Apr 1</span>
+                </div>
+                <div class="bar-group">
+                  <div class="bar pink" style="height: 74%"></div>
+                  <div class="bar yellow" style="height: 31%"></div>
+                  <div class="bar green" style="height: 58%"></div>
+                  <span>Apr 2</span>
+                </div>
+                <div class="bar-group">
+                  <div class="bar pink" style="height: 73%"></div>
+                  <div class="bar yellow" style="height: 49%"></div>
+                  <div class="bar green" style="height: 36%"></div>
+                  <span>Apr 3</span>
+                </div>
+                <div class="bar-group">
+                  <div class="bar pink" style="height: 71%"></div>
+                  <div class="bar yellow" style="height: 46%"></div>
+                  <div class="bar green" style="height: 30%"></div>
+                  <span>Apr 4</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="achievement-path">
+            <h2 class="section-title">Path of Achievement</h2>
+            <div class="path-card">
+              <div class="path-line"></div>
+              <div class="path-steps">
+                <div class="step done">
+                  <div class="step-circle"><i class="fa-solid fa-check"></i></div>
+                  <span>Course 1</span>
+                </div>
+                <div class="step done">
+                  <div class="step-circle"><i class="fa-solid fa-check"></i></div>
+                  <span>Course 2</span>
+                </div>
+                <div class="step done">
+                  <div class="step-circle"><i class="fa-solid fa-check"></i></div>
+                  <span>Course 3</span>
+                </div>
+                <div class="step done">
+                  <div class="step-circle"><i class="fa-solid fa-check"></i></div>
+                  <span>Course 4</span>
+                </div>
+                <div class="step current">
+                  <div class="step-circle"></div>
+                  <span><i class="fa-solid fa-flag-checkered"></i></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="right-panel">
+          <div class="stats-card">
+            <h3>General hours in a month</h3>
+            <div class="donut-wrap">
+              <div class="donut-chart">
+                <div class="donut-inner"></div>
+                <div class="donut-text">
+                  <span>37%</span>
+                  <small>45%</small>
+                  <em>18%</em>
+                </div>
+              </div>
+            </div>
+            <div class="stats-footer">
+              <span>total studying time</span>
+              <div class="footer-line"></div>
+            </div>
+          </div>
+
+          <div class="profile-panel">
+            <div class="profile-top">
+              <div class="cover-pattern"></div>
+              <div class="student-photo"></div>
+            </div>
+            <div class="profile-body">
+              <h3 id="mainUserName">User</h3>
+              <p>Miami, Central City</p>
+              <div class="profile-stats">
+                <div><strong>87</strong><span>Hours</span></div>
+                <div><strong>12</strong><span>Courses</span></div>
+                <div><strong>8</strong><span>Certificate</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="xp-card">
+            <h3>Achievement</h3>
+            <div class="medal">
+              <div class="ribbon left"></div>
+              <div class="ribbon right"></div>
+              <div class="medal-circle">
+                <i class="fa-solid fa-star"></i>
+              </div>
+            </div>
+            <h2>3200 XP</h2>
+            <button>Redeem Coin</button>
+          </div>
+        </aside>
+      </section>
+    </main>
+  </div>
+
+  <script src="/frontend/javascript/dashboard.js"></script>
+</body>
+</html>
