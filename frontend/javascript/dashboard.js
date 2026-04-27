@@ -6,7 +6,7 @@ if (!token) {
 
 async function loadDashboard() {
   try {
-    const res = await fetch("http://localhost:3000/api/auth/me", {
+    const res = await fetch("https://campus-fmjd.onrender.com/api/auth/me", {
       headers: {
         Authorization: `Bearer ${token}`
       }
