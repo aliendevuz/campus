@@ -1,0 +1,214 @@
+/* ============================================
+   FEATURES SECTION
+   ============================================ */
+.features__header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto var(--sp-16);
+}
+
+.features__header .section-sub {
+  margin-inline: auto;
+}
+
+/* ---- Bento Grid ---- */
+.features__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto;
+  gap: var(--sp-4);
+}
+
+/* Large card spans 2 cols */
+.feat-card--large {
+  grid-column: span 2;
+}
+
+/* ---- Base card ---- */
+.feat-card {
+  position: relative;
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-xl);
+  padding: var(--sp-8);
+  overflow: hidden;
+  transition:
+    border-color var(--transition-base),
+    transform var(--transition-slow),
+    box-shadow var(--transition-slow);
+}
+
+.feat-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 60% 60% at 10% 10%,
+    hsla(var(--icon-rgb, 258, 90%, 66%), 0.08),
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.feat-card:hover {
+  border-color: var(--clr-border-light);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+}
+
+.feat-card:hover::before {
+  opacity: 1;
+}
+
+/* Dark variant */
+.feat-card--dark {
+  background: linear-gradient(135deg, hsl(258,30%,11%), hsl(222,24%,10%));
+  border-color: hsla(258,90%,66%,0.2);
+}
+
+/* ---- Icon ---- */
+.feat-card__icon-wrap {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  background: hsla(var(--icon-clr, hsl(258,90%,66%)), 0.12);
+  background: color-mix(in srgb, var(--icon-clr, hsl(258,90%,66%)) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--icon-clr, hsl(258,90%,66%)) 25%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--sp-5);
+  color: var(--icon-clr, var(--clr-primary));
+  transition: transform var(--transition-spring);
+}
+
+.feat-card:hover .feat-card__icon-wrap {
+  transform: scale(1.1) rotate(-4deg);
+}
+
+/* ---- Text ---- */
+.feat-card__title {
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-semibold);
+  color: var(--clr-text);
+  margin-bottom: var(--sp-3);
+  line-height: var(--lh-snug);
+}
+
+.feat-card__desc {
+  font-size: var(--fs-base);
+  color: var(--clr-text-muted);
+  line-height: var(--lh-relaxed);
+  max-width: 42ch;
+}
+
+/* ---- AI pill ---- */
+.feat-card__pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  margin-top: var(--sp-4);
+  padding: 0.3em 0.9em;
+  border-radius: var(--radius-full);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  background: var(--grad-primary);
+  color: #fff;
+  letter-spacing: 0.03em;
+}
+
+.feat-card__pill::before {
+  content: '✦';
+  font-size: 10px;
+}
+
+/* ---- Learning path visual ---- */
+.feat-card__visual--path {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  margin-top: var(--sp-6);
+  flex-wrap: wrap;
+}
+
+.path-node {
+  padding: 0.4em 1em;
+  border-radius: var(--radius-full);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  background: var(--clr-surface-2);
+  border: 1px solid var(--clr-border);
+  color: var(--clr-text-muted);
+  transition: all var(--transition-base);
+}
+
+.path-node--done {
+  background: color-mix(in srgb, var(--clr-green) 15%, transparent);
+  border-color: color-mix(in srgb, var(--clr-green) 30%, transparent);
+  color: var(--clr-green);
+}
+
+.path-node--active {
+  background: color-mix(in srgb, var(--clr-primary) 15%, transparent);
+  border-color: color-mix(in srgb, var(--clr-primary) 35%, transparent);
+  color: var(--clr-primary-lt);
+  box-shadow: 0 0 16px color-mix(in srgb, var(--clr-primary) 30%, transparent);
+  animation: pulse-glow 2.5s ease-in-out infinite;
+}
+
+.path-arrow {
+  color: var(--clr-text-faint);
+  font-size: var(--fs-md);
+}
+
+/* ---- Devices pill row ---- */
+.feat-card__devices {
+  display: flex;
+  gap: var(--sp-2);
+  flex-wrap: wrap;
+  margin-top: var(--sp-5);
+}
+
+.device-pill {
+  padding: 0.4em 1em;
+  border-radius: var(--radius-full);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  background: hsla(258,90%,66%,0.1);
+  border: 1px solid hsla(258,90%,66%,0.2);
+  color: var(--clr-primary-lt);
+  transition: all var(--transition-base);
+}
+
+.device-pill:hover {
+  background: hsla(258,90%,66%,0.2);
+  transform: translateY(-2px);
+}
+
+/* ============================================
+   RESPONSIVE — Features
+   ============================================ */
+@media (max-width: 900px) {
+  .features__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .feat-card--large {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .features__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feat-card--large {
+    grid-column: span 1;
+  }
+
+  .feat-card__visual--path {
+    display: none;
+  }
+}

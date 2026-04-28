@@ -1,0 +1,109 @@
+/* ============================================
+   CTA BANNER SECTION
+   ============================================ */
+.cta-banner {
+  position: relative;
+  margin-top: var(--sp-12);
+  margin-bottom: var(--sp-24);
+}
+
+.cta-banner__inner {
+  position: relative;
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border-light);
+  border-radius: var(--radius-xl);
+  padding: var(--sp-16) var(--sp-8);
+  text-align: center;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Big ambient glow inside banner */
+.cta-banner__glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    ellipse 80% 80% at 50% 50%,
+    hsla(258,90%,60%,0.15),
+    transparent 60%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Animated subtle pattern */
+.cta-banner__inner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(hsla(255,100%,100%,0.05) 1px, transparent 1px);
+  background-size: 24px 24px;
+  mask-image: radial-gradient(ellipse at center, black, transparent 80%);
+  z-index: 0;
+}
+
+.cta-banner__content {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+}
+
+.cta-banner__title {
+  font-family: var(--font-display);
+  font-size: clamp(var(--fs-3xl), 5vw, var(--fs-5xl));
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-tight);
+  color: var(--clr-text);
+  margin-bottom: var(--sp-5);
+  letter-spacing: -0.02em;
+}
+
+.cta-banner__title em {
+  font-style: italic;
+  font-weight: var(--fw-light);
+  background: var(--grad-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.cta-banner__sub {
+  font-size: var(--fs-lg);
+  color: var(--clr-text-muted);
+  line-height: var(--lh-relaxed);
+  margin-bottom: var(--sp-8);
+}
+
+.cta-banner__actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-4);
+  flex-wrap: wrap;
+}
+
+/* ============================================
+   RESPONSIVE — CTA
+   ============================================ */
+@media (max-width: 600px) {
+  .cta-banner__inner {
+    padding: var(--sp-12) var(--sp-5);
+  }
+  
+  .cta-banner__actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .cta-banner__actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

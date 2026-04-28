@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Log in — CampusApp</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,300&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/sections/auth.css" />
+</head>
+<body>
+
+  <main class="auth-layout">
+    <div class="auth-card" data-animate="fade-up">
+      <div class="auth-header">
+        <a href="index.html" class="auth-logo">
+          <span class="logo-icon">🎓</span>
+          <span class="logo-text">CampusApp</span>
+        </a>
+        <h1 class="auth-title">Welcome back</h1>
+        <p class="auth-sub">Log in with your university email.</p>
+      </div>
+
+      <form action="dashboard.html" class="auth-form" method="GET">
+        <div class="form-group">
+          <label for="email" class="form-label">University Email</label>
+          <input type="email" id="email" class="form-input" placeholder="student.name@university.edu" required />
+        </div>
+        
+        <div class="form-group">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" id="password" class="form-input" placeholder="••••••••" required />
+        </div>
+
+        <div class="form-options">
+          <label class="form-checkbox">
+            <input type="checkbox" checked />
+            Remember me
+          </label>
+          <a href="#" class="form-link">Forgot password?</a>
+        </div>
+
+        <button type="submit" class="btn btn--primary btn--full">Sign In</button>
+      </form>
+
+      <div class="auth-footer">
+        Having trouble? <a href="#" class="form-link">Contact IT Support</a>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

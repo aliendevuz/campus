@@ -1,330 +1,211 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Teachemy Messages</title>
+  <title>Messages & Community — CampusApp</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
-  />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-  />
-  <link rel="stylesheet" href="./css/messages.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
 </head>
-<body>
-  <div class="dashboard">
-    <aside class="sidebar">
-      <div>
-        <div class="brand">
-          <div class="brand-icon"></div>
-          <div>
-            <h1>TEACHEMY</h1>
-            <p>MAIN NAVIGATION</p>
+<body class="dashboard-body">
+
+  <div class="dashboard-layout">
+    
+    <!-- Sidebar -->
+    <aside class="dash-sidebar">
+      <a href="index.html" class="dash-brand">
+        <span class="logo-icon">🎓</span>
+        <span class="logo-text">CampusApp</span>
+      </a>
+
+      <nav class="dash-nav">
+        <a href="dashboard.html" class="dash-nav__link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>
+          Overview
+        </a>
+        <a href="schedule.html" class="dash-nav__link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Schedule
+        </a>
+        <a href="grades.html" class="dash-nav__link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          Grade Book
+        </a>
+        <a href="campus.html" class="dash-nav__link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Campus Map
+        </a>
+        <a href="messages.html" class="dash-nav__link active">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          Messages
+        </a>
+      </nav>
+
+      <div class="dash-sidebar__footer">
+        <!-- Multilingual and Dark Mode Toggles -->
+        <div style="padding:var(--sp-2) var(--sp-4); margin-bottom:var(--sp-2); display:flex; flex-direction:column; gap:var(--sp-2);">
+          <div style="display:flex; justify-content:space-between; align-items:center; font-size:var(--fs-xs); color:var(--clr-text-muted);">
+            <span>Language</span>
+            <select style="background:var(--clr-surface-2); border:1px solid var(--clr-border); color:var(--clr-text); border-radius:4px; padding:2px;">
+              <option>English</option>
+              <option>Russian</option>
+              <option>Uzbek</option>
+            </select>
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:center; font-size:var(--fs-xs); color:var(--clr-text-muted);">
+            <span>Dark Mode</span>
+            <input type="checkbox" checked />
           </div>
         </div>
 
-        <div class="nav-section">
-          <span class="nav-label">MAIN NAVIGATION</span>
-          <ul class="nav-list">
-            <li><a href="dashboard.html"><i class="fa-solid fa-chart-column"></i>Dashboard</a></li>
-            <li><a href="subject.html"><i class="fa-solid fa-table-cells-large"></i>Subject</a></li>
-            <li class="active"><a href="#"><i class="fa-solid fa-message"></i>Messages <span class="badge">4</span></a></li>
-            <li><a href="schedule.html"><i class="fa-solid fa-calendar-days"></i>Schedule</a></li>
-            <li><a href="settings.html"><i class="fa-solid fa-gear"></i>Settings</a></li>
-          </ul>
-        </div>
-
-        <div class="nav-section">
-          <span class="nav-label">SUPPORT</span>
-          <ul class="nav-list">
-            <li><a href="library.html"><i class="fa-solid fa-book"></i>Library</a></li>
-            <li><a href="help.html"><i class="fa-solid fa-flag"></i>Help</a></li>
-          </ul>
-        </div>
-
-        <div class="nav-section">
-          <span class="nav-label">OTHERS</span>
-          <ul class="nav-list">
-            <li><a href="mini_games.html"><i class="fa-solid fa-puzzle-piece"></i>Mini games</a></li>
-            <li><a href="payment_history.html"><i class="fa-solid fa-money-bill-wave"></i>Payment history</a></li>
-          </ul>
-        </div>
+        <a href="index.html" class="dash-nav__link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+          Log Out
+        </a>
       </div>
-
-    <div class="profile-card">
-        <span class="profile-title">Profile</span>
-        <div class="profile-row">
-          <a href="profile.html">
-        <div class="avatar"></div>
-          <div>
-            <h4>Amanda</h4>
-            <p>Admin Account</p>
-          </div>
-          </a>
-          <i class="fa-solid fa-ellipsis"></i>
-        </div>
-      </div>
-      <button class="logout-btn"><i class="fa-solid fa-right-from-bracket"></i>Logout</button>
     </aside>
 
-    <main class="main-content">
-      <header class="topbar">
-        <div class="search-box">
-          <i class="fa-solid fa-magnifying-glass"></i>
-          <input type="text" id="chatSearch" placeholder="Search for anything..." />
+    <!-- Main View -->
+    <main class="dash-main">
+      <!-- Top Header -->
+      <header class="dash-header">
+        <div class="header-search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" placeholder="Find classmates or faculty..." />
         </div>
-
-        <nav class="top-links">
-          <a href="#">Blog</a>
-          <a href="#">About us</a>
-          <a href="#">Science</a>
-          <a href="#">Contact us</a>
-        </nav>
-
-        <div class="user-dropdown" id="userDropdown">
-  <button class="user-box user-trigger" id="userTrigger">
-    <span class="bell-btn">
-      <i class="fa-solid fa-bell"></i>
-      <span>8</span>
-    </span>
-
-    <div class="top-avatar"></div>
-    <p>Elise Beverley</p>
-    <i class="fa-solid fa-caret-down user-caret"></i>
-  </button>
-
-  <div class="user-menu" id="userMenu">
-    <a href="profile.html">Account</a>
-    <a href="settings.html">Settings</a>
-    <a href="#">Verify</a>
-    <a href="#">Exit</a>
-  </div>
-</div>
-
+        <div class="header-actions">
+          <button class="header-icon-btn">
+            <span class="notif-badge"></span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          </button>
+          <div class="header-profile">
+            <img src="https://i.pravatar.cc/100?img=12" alt="Profile" />
+          </div>
+        </div>
       </header>
 
-      <section class="message-layout">
-        <aside class="chat-list-panel">
-          <div class="chat-panel-header">
-            <div>
-              <h2>Inbox <span>(98)</span></h2>
-            </div>
-            <div class="chat-panel-actions">
-              <button class="new-btn">+ Button</button>
-              <button class="tiny-btn"><i class="fa-solid fa-sliders"></i></button>
-            </div>
+      <!-- Scrollable Content -->
+      <div class="dash-content">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:var(--sp-8);">
+          <div>
+            <h1 class="page-title">Messages & Community</h1>
+            <p class="page-sub">Connect with peers, faculty, and student council.</p>
           </div>
-
-          <div class="chat-list" id="chatList">
-            <div class="chat-item active" data-name="Alihanov Bahrom">
-              <div class="chat-avatar"></div>
-              <div class="chat-info">
-                <h4>Alihanov Bahrom</h4>
-                <p>I need to solve my life</p>
-              </div>
-              <div class="chat-meta">
-                <small>2m</small>
-                <span>2</span>
-              </div>
-            </div>
-
-            <div class="chat-item" data-name="Jalolov Omadbek">
-              <div class="chat-avatar"></div>
-              <div class="chat-info">
-                <h4>Jalolov Omadbek</h4>
-                <p>Hey iconcase</p>
-              </div>
-              <div class="chat-meta">
-                <small>2m</small>
-                <span>1</span>
-              </div>
-            </div>
-
-            <div class="chat-item selected" data-name="Daniel Stephens">
-              <div class="chat-avatar"></div>
-              <div class="chat-info">
-                <h4>Daniel Stephens</h4>
-                <p><i class="fa-solid fa-microphone-lines"></i> Audio Message</p>
-              </div>
-              <div class="chat-meta">
-                <small>2m</small>
-                <span>1</span>
-              </div>
-            </div>
-
-            <div class="chat-item" data-name="Victoria Owens">
-              <div class="chat-avatar"></div>
-              <div class="chat-info">
-                <h4>Victoria Owens</h4>
-                <p>Yeah, I agree with you</p>
-              </div>
-              <div class="chat-meta"><small>2m</small></div>
-            </div>
-
-            <div class="chat-item" data-name="Louis Patterson">
-              <div class="chat-avatar"></div>
-              <div class="chat-info">
-                <h4>Louis Patterson</h4>
-                <p>Can you please show m...</p>
-              </div>
-              <div class="chat-meta"><small>2m</small></div>
-            </div>
-
-            <div class="chat-item" data-name="Ozi Briandito">
-              <div class="chat-avatar"></div>
-              <div class="chat-info">
-                <h4>Ozi Briandito</h4>
-                <p><i class="fa-solid fa-microphone-lines"></i> Audio Message</p>
-              </div>
-              <div class="chat-meta"><small>2m</small></div>
-            </div>
-
-            <div class="chat-item" data-name="Zulia Daniel">
-              <div class="chat-avatar"></div>
-              <div class="chat-info">
-                <h4>Zulia Daniel</h4>
-                <p>Your iconset are very a...</p>
-              </div>
-              <div class="chat-meta"><small>2m</small></div>
-            </div>
-
-            <div class="chat-item" data-name="Silvia Amanda">
-              <div class="chat-avatar"></div>
-              <div class="chat-info">
-                <h4>Silvia Amanda</h4>
-                <p>Haha, thank you very m...</p>
-              </div>
-              <div class="chat-meta"><small>2m</small></div>
-            </div>
-
-            <div class="chat-item" data-name="Brian Imanuel">
-              <div class="chat-avatar"></div>
-              <div class="chat-info">
-                <h4>Brian Imanuel</h4>
-                <p>Yea, I agree with you abou...</p>
-              </div>
-              <div class="chat-meta"><small>2m</small></div>
-            </div>
-
-            <div class="chat-item" data-name="Shanti Anderson">
-              <div class="chat-avatar"></div>
-              <div class="chat-info">
-                <h4>Shanti Anderson</h4>
-                <p>Can you please share m...</p>
-              </div>
-              <div class="chat-meta"><small>2m</small></div>
-            </div>
-
-            <div class="chat-item" data-name="Gian Andrew">
-              <div class="chat-avatar"></div>
-              <div class="chat-info">
-                <h4>Gian Andrew</h4>
-                <p>Great!</p>
-              </div>
-              <div class="chat-meta"><small>2m</small></div>
-            </div>
-
-            <div class="chat-item" data-name="Andrew Brian">
-              <div class="chat-avatar"></div>
-              <div class="chat-info">
-                <h4>Andrew Brian</h4>
-                <p>Haha, thanks!</p>
-              </div>
-              <div class="chat-meta"><small>2m</small></div>
-            </div>
+          <div>
+            <button class="btn btn--primary" style="display:flex; gap:8px;">
+              <span>💬</span> Connect Telegram Bot
+            </button>
           </div>
-        </aside>
+        </div>
 
-        <section class="conversation-panel">
-          <div class="conversation-header">
-            <div class="person-block">
-              <div class="chat-avatar large"></div>
-              <div>
-                <h3 id="activeChatName">Daniel Stephens</h3>
-                <p><span class="online-dot"></span>Online</p>
-              </div>
+        <div class="bento-grid">
+          
+          <!-- Widget: Chats -->
+          <div class="widget widget--span-8">
+            <div class="widget__header">
+              <h3 class="widget__title">🗨️ Your Chats</h3>
             </div>
-
-            <div class="conversation-actions">
-              <button><i class="fa-solid fa-video"></i></button>
-              <button><i class="fa-solid fa-phone"></i></button>
-            </div>
-          </div>
-
-          <div class="messages-area" id="messagesArea">
-            <div class="date-chip">26 March</div>
-
-            <div class="message incoming">
-              <div class="bubble">
-                Yeah, your iconset are very awesome and usefull for my web app. Great job! 👏🏽
-              </div>
-            </div>
-
-            <div class="message incoming narrow">
-              <div class="bubble">
-                By the way, can you please show me the preview of your new product?
-              </div>
-              <span class="time">12:46 PM</span>
-            </div>
-
-            <div class="divider">
-              <span>New Message</span>
-            </div>
-
-            <div class="message outgoing media-message">
-              <div class="bubble purple">
-                <p>Sure 🙂</p>
-                <div class="preview-grid">
-                  <div></div>
-                  <div></div>
+            
+            <div style="display:flex; flex-direction:column; gap:0;">
+              <!-- Chat Item -->
+              <div style="display:flex; align-items:center; gap:var(--sp-4); padding:var(--sp-3) 0; border-bottom:1px solid var(--clr-border);">
+                <div style="width:48px; height:48px; border-radius:50%; background:var(--grad-primary); display:flex; align-items:center; justify-content:center; font-size:1.2rem; color:#fff;">P</div>
+                <div style="flex:1;">
+                  <div style="display:flex; justify-content:space-between;">
+                    <h4 style="font-size:var(--fs-base); margin-bottom:2px;">Physics 101 Group</h4>
+                    <span style="font-size:var(--fs-xs); color:var(--clr-text-muted);">10:42 AM</span>
+                  </div>
+                  <p style="font-size:var(--fs-sm); color:var(--clr-text-muted);">Sarah: Has anyone finished the lab report?</p>
                 </div>
               </div>
-              <span class="time">12:48 PM <i class="fa-solid fa-check-double"></i></span>
-            </div>
-
-            <div class="message incoming audio-message">
-              <div class="audio-box light">
-                <button class="play-btn"><i class="fa-solid fa-play"></i></button>
-                <div class="wave"></div>
-                <small>00:48</small>
+              
+              <!-- Chat Item -->
+              <div style="display:flex; align-items:center; gap:var(--sp-4); padding:var(--sp-3) 0; border-bottom:1px solid var(--clr-border);">
+                <div style="width:48px; height:48px; border-radius:50%; background:var(--grad-warm); display:flex; align-items:center; justify-content:center; font-size:1.2rem; color:#fff;">📢</div>
+                <div style="flex:1;">
+                  <div style="display:flex; justify-content:space-between;">
+                    <h4 style="font-size:var(--fs-base); margin-bottom:2px;">Campus-Wide Chat</h4>
+                    <span style="font-size:var(--fs-xs); color:var(--clr-text-muted);">Yesterday</span>
+                  </div>
+                  <p style="font-size:var(--fs-sm); color:var(--clr-text-muted);">Admin: Welcome back to campus! Don't forget...</p>
+                </div>
               </div>
-              <span class="time">08:26 AM</span>
-            </div>
 
-            <div class="message outgoing audio-message">
-              <div class="audio-box dark">
-                <button class="play-btn"><i class="fa-solid fa-play"></i></button>
-                <div class="wave"></div>
-                <small>00:48</small>
+              <!-- Chat Item -->
+              <div style="display:flex; align-items:center; gap:var(--sp-4); padding:var(--sp-3) 0; border-bottom:1px solid var(--clr-border);">
+                <img src="https://i.pravatar.cc/100?img=33" style="width:48px; height:48px; border-radius:50%;" />
+                <div style="flex:1;">
+                  <div style="display:flex; justify-content:space-between;">
+                    <h4 style="font-size:var(--fs-base); margin-bottom:2px;">Prof. Anderson</h4>
+                    <span style="font-size:var(--fs-xs); color:var(--clr-text-muted);">Monday</span>
+                  </div>
+                  <p style="font-size:var(--fs-sm); color:var(--clr-text-muted);">Your consultation is confirmed for 4:00 PM.</p>
+                </div>
               </div>
-              <span class="time">08:26 AM <i class="fa-solid fa-check-double"></i></span>
+
             </div>
           </div>
 
-          <form class="message-input-bar" id="messageForm">
-            <div class="input-wrap">
-              <input type="text" id="messageInput" placeholder="Type a messages..." />
-              <div class="input-tools">
-                <button type="button"><i class="fa-regular fa-microphone"></i></button>
-                <button type="button"><i class="fa-solid fa-paperclip"></i></button>
-                <button type="button"><i class="fa-solid fa-circle-plus"></i></button>
+          <!-- Widget: Student Council -->
+          <div class="widget widget--span-4">
+            <div class="widget__header">
+              <h3 class="widget__title">🗳️ Student Council</h3>
+            </div>
+            <div style="background:var(--clr-surface-2); padding:var(--sp-4); border-radius:var(--radius-md); margin-bottom:var(--sp-4);">
+              <h4 style="font-size:var(--fs-sm); margin-bottom:8px;">Active Vote: New Library Hours</h4>
+              <p style="font-size:var(--fs-xs); color:var(--clr-text-muted); margin-bottom:var(--sp-3);">Should the main library stay open 24/7 during midterm week?</p>
+              <div style="display:flex; gap:var(--sp-2);">
+                <button class="btn btn--primary" style="flex:1; padding:var(--sp-2);">Yes</button>
+                <button class="btn btn--outline" style="flex:1; padding:var(--sp-2);">No</button>
               </div>
             </div>
-            <button type="submit" class="send-btn">
-              <i class="fa-solid fa-paper-plane"></i>
-            </button>
-          </form>
-        </section>
-      </section>
+            <a href="#" class="form-link" style="display:block; text-align:center;">Read Council News</a>
+          </div>
+
+          <!-- Widget: Directory -->
+          <div class="widget widget--span-6">
+            <div class="widget__header">
+              <h3 class="widget__title">👨‍🏫 Faculty Directory</h3>
+            </div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:var(--sp-3);">
+              <div style="background:var(--clr-surface-2); padding:var(--sp-3); border-radius:var(--radius-sm); display:flex; align-items:center; gap:var(--sp-3);">
+                <img src="https://i.pravatar.cc/50?img=33" style="width:32px; height:32px; border-radius:50%;" />
+                <div>
+                  <h4 style="font-size:var(--fs-sm);">Prof. Anderson</h4>
+                  <a href="#" class="form-link" style="font-size:var(--fs-xs);">Book Consult</a>
+                </div>
+              </div>
+              <div style="background:var(--clr-surface-2); padding:var(--sp-3); border-radius:var(--radius-sm); display:flex; align-items:center; gap:var(--sp-3);">
+                <img src="https://i.pravatar.cc/50?img=47" style="width:32px; height:32px; border-radius:50%;" />
+                <div>
+                  <h4 style="font-size:var(--fs-sm);">Dr. Peterson</h4>
+                  <a href="#" class="form-link" style="font-size:var(--fs-xs);">Book Consult</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Widget: Anonymous Support -->
+          <div class="widget widget--span-6" style="border: 1px solid hsla(192,88%,58%,0.3); background: radial-gradient(circle at right, hsla(192,88%,58%,0.1), var(--clr-surface));">
+            <div class="widget__header">
+              <h3 class="widget__title">🧠 Psychological Support</h3>
+            </div>
+            <p style="font-size:var(--fs-sm); color:var(--clr-text-muted); margin-bottom:var(--sp-4);">
+              University can be stressful. Chat completely anonymously with a certified campus counselor. Available 24/7.
+            </p>
+            <button class="btn btn--outline" style="border-color:var(--clr-accent); color:var(--clr-accent);">Start Anonymous Chat</button>
+          </div>
+
+        </div>
+      </div>
     </main>
   </div>
-
-  <script src="./javascript/messages.js"></script>
+  <script src="js/dashboard.js"></script>
 </body>
 </html>

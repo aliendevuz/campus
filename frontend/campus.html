@@ -3,12 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dashboard — CampusApp</title>
-  
+  <title>Campus Life — CampusApp</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,300&display=swap" rel="stylesheet" />
-
   <link rel="stylesheet" href="css/reset.css" />
   <link rel="stylesheet" href="css/tokens.css" />
   <link rel="stylesheet" href="css/global.css" />
@@ -27,7 +25,7 @@
       </a>
 
       <nav class="dash-nav">
-        <a href="dashboard.html" class="dash-nav__link active">
+        <a href="dashboard.html" class="dash-nav__link">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>
           Overview
         </a>
@@ -39,7 +37,7 @@
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
           Grade Book
         </a>
-        <a href="campus.html" class="dash-nav__link">
+        <a href="campus.html" class="dash-nav__link active">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
           Campus Map
         </a>
@@ -75,153 +73,115 @@
 
     <!-- Main View -->
     <main class="dash-main">
-      
       <!-- Top Header -->
       <header class="dash-header">
         <div class="header-search">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          <input type="text" placeholder="Search courses, news, faculty..." />
+          <input type="text" placeholder="Search campus locations..." />
         </div>
-
         <div class="header-actions">
           <button class="header-icon-btn">
             <span class="notif-badge"></span>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
           </button>
-          
           <div class="header-profile">
             <img src="https://i.pravatar.cc/100?img=12" alt="Profile" />
-            <div style="line-height:1.2;">
-              <p style="font-size:var(--fs-sm);font-weight:600;">Alex Taylor</p>
-              <p style="font-size:var(--fs-xs);color:var(--clr-text-muted);">Junior Year</p>
-            </div>
           </div>
         </div>
       </header>
 
       <!-- Scrollable Content -->
       <div class="dash-content">
-        <h1 class="page-title">Overview</h1>
-        <p class="page-sub">Welcome back, Alex. Here is what's happening today.</p>
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:var(--sp-8);">
+          <div>
+            <h1 class="page-title">Campus Services</h1>
+            <p class="page-sub">Navigate the campus, order food, and access library services.</p>
+          </div>
+        </div>
 
         <div class="bento-grid">
           
-          <!-- Widget: Schedule -->
-          <div class="widget widget--span-8">
-            <div class="widget__header">
-              <h3 class="widget__title">📅 Today's Schedule</h3>
-              <a href="schedule.html" class="form-link">View Full</a>
+          <!-- Widget: Campus Map -->
+          <div class="widget widget--span-8" style="padding:0; overflow:hidden;">
+            <!-- Placeholder for map -->
+            <div style="height:300px; background:var(--clr-surface-2); position:relative; display:flex; align-items:center; justify-content:center;">
+              <div style="position:absolute; top:20px; left:20px; background:hsla(222,28%,6%,0.8); backdrop-filter:blur(8px); padding:var(--sp-3); border-radius:var(--radius-md); z-index:10; border:1px solid var(--clr-border);">
+                <h4 style="font-size:var(--fs-sm); margin-bottom:8px;">Quick Navigate</h4>
+                <div style="display:flex; flex-direction:column; gap:4px;">
+                  <button class="btn btn--outline" style="padding:4px 8px; font-size:var(--fs-xs);">Library</button>
+                  <button class="btn btn--outline" style="padding:4px 8px; font-size:var(--fs-xs);">Cafeteria</button>
+                  <button class="btn btn--outline" style="padding:4px 8px; font-size:var(--fs-xs);">Dormitories</button>
+                </div>
+              </div>
+              
+              <!-- Dummy Map Visuals -->
+              <div style="font-size:3rem; color:var(--clr-text-muted); opacity:0.2;">Interactive Map Area</div>
             </div>
-            
-            <div class="timeline">
-              <div class="timeline-item">
-                <div class="time-col">09:00 AM</div>
-                <div class="card-col">
-                  <h4>Physics 101 — Mechanics</h4>
-                  <p>Building B, Room 304 • Prof. Anderson</p>
-                </div>
-              </div>
-              <div class="timeline-item">
-                <div class="time-col">11:30 AM</div>
-                <div class="card-col" style="border-left-color: var(--clr-accent);">
-                  <h4>Intro to Computer Science</h4>
-                  <p>Lab 4 • Dr. Peterson</p>
-                </div>
-              </div>
-              <div class="timeline-item">
-                <div class="time-col">02:00 PM</div>
-                <div class="card-col" style="border-left-color: var(--clr-green);">
-                  <h4>Group Study: Calculus</h4>
-                  <p>Library, Study Room A</p>
-                </div>
-              </div>
+            <div style="padding:var(--sp-4);">
+              <h3 class="widget__title" style="margin-bottom:0;">📍 Campus Navigator</h3>
+              <p style="font-size:var(--fs-sm); color:var(--clr-text-muted);">Current Location: Building C, 2nd Floor</p>
             </div>
           </div>
 
-          <!-- Widget: Quick Actions -->
+          <!-- Widget: Cafeteria -->
           <div class="widget widget--span-4">
             <div class="widget__header">
-              <h3 class="widget__title">⚡ Quick Actions</h3>
+              <h3 class="widget__title">🍔 Main Cafeteria</h3>
             </div>
-            <div class="action-grid">
-              <button class="action-btn">
-                <span class="action-icon">📚</span>
-                <span>Book Study Room</span>
-              </button>
-              <button class="action-btn">
-                <span class="action-icon">🍔</span>
-                <span>Pre-order Food</span>
-              </button>
-              <button class="action-btn">
-                <span class="action-icon">👨‍🏫</span>
-                <span>Consult Prof</span>
-              </button>
-              <button class="action-btn">
-                <span class="action-icon">📄</span>
-                <span>Request Docs</span>
-              </button>
+            <div style="background:var(--clr-surface-2); padding:var(--sp-4); border-radius:var(--radius-md); margin-bottom:var(--sp-4);">
+              <h4 style="font-size:var(--fs-sm); color:var(--clr-primary-lt); margin-bottom:4px;">Today's Menu Special</h4>
+              <p style="font-weight:var(--fw-semibold);">Grilled Chicken Bowl</p>
+              <p style="font-size:var(--fs-xs); color:var(--clr-text-muted);">Quinoa, roasted veggies, house sauce.</p>
             </div>
+            <button class="btn btn--primary btn--full">Pre-order Food</button>
           </div>
 
-          <!-- Widget: University News -->
-          <div class="widget widget--span-6">
+          <!-- Widget: Library Services -->
+          <div class="widget widget--span-4">
             <div class="widget__header">
-              <h3 class="widget__title">📰 Campus News</h3>
-              <a href="campus.html" class="form-link">See all</a>
+              <h3 class="widget__title">📚 Library</h3>
             </div>
-            <div class="news-feed">
-              <div class="news-item">
-                <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=150&q=80" alt="News" class="news-thumb" />
-                <div class="news-content">
-                  <p class="news-meta">Administration • 2 hours ago</p>
-                  <h4>Fall Festival starts this Friday on the Main Quad</h4>
-                </div>
+            <div style="display:flex; flex-direction:column; gap:var(--sp-3);">
+              <div style="position:relative;">
+                <input type="text" class="form-input" placeholder="Search books..." />
               </div>
-              <div class="news-item">
-                <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=150&q=80" alt="News" class="news-thumb" />
-                <div class="news-content">
-                  <p class="news-meta">Library • Yesterday</p>
-                  <h4>New 24/7 quiet study zones opened in the West Wing</h4>
-                </div>
-              </div>
+              <button class="btn btn--outline btn--full">Reserve Study Room</button>
             </div>
           </div>
 
-          <!-- Widget: Grades Preview -->
-          <div class="widget widget--span-6">
+          <!-- Widget: Admin & Services -->
+          <div class="widget widget--span-4">
             <div class="widget__header">
-              <h3 class="widget__title">📊 Academic Progress</h3>
-              <a href="grades.html" class="form-link">Open Grade Book</a>
+              <h3 class="widget__title">📄 Admin Services</h3>
             </div>
-            
-            <!-- Simple custom chart/progress view -->
-            <div style="display: flex; gap: var(--sp-6); align-items: center; height: 100%;">
-              <div style="position: relative; width: 120px; height: 120px; border-radius: 50%; background: conic-gradient(var(--clr-primary) 85%, var(--clr-surface-2) 0); display: flex; align-items: center; justify-content: center;">
-                <div style="background: var(--clr-surface); width: 90px; height: 90px; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-                  <span style="font-size: var(--fs-xl); font-weight: 700;">3.8</span>
-                  <span style="font-size: var(--fs-xs); color: var(--clr-text-muted);">GPA</span>
-                </div>
+            <ul style="list-style:none; display:flex; flex-direction:column; gap:var(--sp-3);">
+              <li><a href="#" class="form-link" style="display:block; padding:var(--sp-3); background:var(--clr-surface-2); border-radius:var(--radius-sm);">Request Official Documents</a></li>
+              <li><a href="#" class="form-link" style="display:block; padding:var(--sp-3); background:var(--clr-surface-2); border-radius:var(--radius-sm);">Track Document Status</a></li>
+              <li><a href="#" class="form-link" style="display:block; padding:var(--sp-3); background:var(--clr-surface-2); border-radius:var(--radius-sm); color:var(--clr-green);">Pay Dorm Fees</a></li>
+            </ul>
+          </div>
+
+          <!-- Widget: Community Boards -->
+          <div class="widget widget--span-4">
+            <div class="widget__header">
+              <h3 class="widget__title">📌 Notice Board</h3>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:var(--sp-3);">
+              <div style="padding:var(--sp-3); border-left:3px solid var(--clr-primary); background:var(--clr-surface-2);">
+                <p style="font-size:var(--fs-sm); font-weight:var(--fw-semibold);">Buy/Sell: Physics Textbook</p>
+                <p style="font-size:var(--fs-xs); color:var(--clr-text-muted);">Selling lightly used book for $20. DM Alex.</p>
               </div>
-              <div style="flex:1;">
-                <div style="margin-bottom: var(--sp-3);">
-                  <div style="display:flex; justify-content:space-between; margin-bottom:4px; font-size:var(--fs-sm);"><span>Physics 101</span><span>A-</span></div>
-                  <div style="height:6px; background:var(--clr-surface-2); border-radius:3px; overflow:hidden;"><div style="width:90%; height:100%; background:var(--clr-primary);"></div></div>
-                </div>
-                <div>
-                  <div style="display:flex; justify-content:space-between; margin-bottom:4px; font-size:var(--fs-sm);"><span>Computer Science</span><span>A</span></div>
-                  <div style="height:6px; background:var(--clr-surface-2); border-radius:3px; overflow:hidden;"><div style="width:95%; height:100%; background:var(--clr-accent);"></div></div>
-                </div>
+              <div style="padding:var(--sp-3); border-left:3px solid var(--clr-accent-warm); background:var(--clr-surface-2);">
+                <p style="font-size:var(--fs-sm); font-weight:var(--fw-semibold);">Lost & Found: Blue AirPods</p>
+                <p style="font-size:var(--fs-xs); color:var(--clr-text-muted);">Found near Library. Left at front desk.</p>
               </div>
             </div>
           </div>
 
-        </div> <!-- /bento-grid -->
+        </div>
       </div>
     </main>
-
   </div>
-
-  <!-- We don't need the heavy landing page animations, just a simple script -->
   <script src="js/dashboard.js"></script>
 </body>
 </html>

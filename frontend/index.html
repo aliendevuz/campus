@@ -1,283 +1,346 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Campus App Landing Page</title>
-  <link rel="stylesheet" href="./css/landing.css">
+  <meta name="description"
+    content="Your all-in-one university companion. Schedule, grades, news, and campus navigation." />
+  <title>CampusApp — Your Digital University</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,300&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/components.css" />
+
+  <!-- Section Stylesheets -->
+  <link rel="stylesheet" href="css/sections/hero.css" />
+  <link rel="stylesheet" href="css/sections/stats.css" />
+  <link rel="stylesheet" href="css/sections/features.css" />
+  <link rel="stylesheet" href="css/sections/courses.css" />
+  <link rel="stylesheet" href="css/sections/testimonials.css" />
+  <link rel="stylesheet" href="css/sections/pricing.css" />
+  <link rel="stylesheet" href="css/sections/cta.css" />
+  <link rel="stylesheet" href="css/sections/footer.css" />
 </head>
+
 <body>
-  <header>
-    <div class="container nav">
-        <div class="logo">
-            <img src="./css/logo.png" alt="logo-image">
-            <div>Campuss App</div>
-        </div>
-      <nav class="menu">
-        <a href="#">About project</a>
-        <a href="#">How it works</a>
-        <a href="#">Feedbacks</a>
+
+  <!-- ========== NAVBAR ========== -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a href="index.html" class="navbar__logo">
+        <span class="logo-icon">🎓</span>
+        <span class="logo-text">CampusApp</span>
+      </a>
+
+      <nav class="navbar__links" id="nav-links">
+        <a href="#features">Features</a>
+        <a href="#courses">Electives</a>
+        <a href="#testimonials">Student Life</a>
       </nav>
-      <div class="nav-right">
-        <a href="sign_in.html">Sign in</a>
-        <a href="log_in.html" class="btn">Get started</a>
+
+      <div class="navbar__actions">
+        <!-- <a href="login.html" class="btn btn--ghost">Log in</a> -->
+        <a href="login.html" class="btn btn--primary">Get Started</a>
       </div>
+
+      <button class="navbar__burger" id="nav-burger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
-  <section class="hero">
-    <div class="container">
-      <div class="hero-box">
-        <div class="hero-text">
-          <h1>Your first campuse <span>platform app</span></h1>
-          <p class="muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          <br />
-          <a href="#" class="btn">See more</a>
-        </div>
-        <div class="hero-visual">
-            <img src="./css/image1.png" alt="image" width="90%" height="80%">
-        </div>
-      </div>
+  <main>
+    <!-- ========== HERO SECTION ========== -->
+    <section class="hero" id="hero">
+      <div class="hero__bg-grid"></div>
+      <div class="hero__glow hero__glow--1"></div>
+      <div class="hero__glow hero__glow--2"></div>
 
-      <div class="brands">
-        <div>Logopipsum</div>
-        <div>Logopipsum</div>
-        <div>Logopipsum</div>
-        <div>Logopipsum</div>
-        <div>Logopipsum</div>
-        <div>Logopipsum</div>
-      </div>
-    </div>
-  </section>
-
-  <section class="how">
-    <div class="container">
-      <h2 class="section-title">How it <span>works?</span></h2>
-
-      <div class="timeline">
-        <div class="step">
-          <div class="step-card">
-            <h3>Language choosing</h3>
-            <p class="muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur.</p>
-            <br />
-            <a href="#" class="btn">Choose language</a>
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <div class="hero__badge" data-animate="fade-up" data-delay="0">
+            <span class="badge__dot"></span>
+            <span>Welcome to the Fall Semester</span>
           </div>
-          <div class="placeholder"></div>
+
+          <h1 class="hero__headline" data-animate="fade-up" data-delay="1">
+            Your Digital<br />
+            <em class="headline__accent">Campus.</em>
+          </h1>
+
+          <p class="hero__sub" data-animate="fade-up" data-delay="2">
+            Everything you need for university life in one place. Access your schedule, check grades, navigate campus,
+            and connect with peers instantly.
+          </p>
+
+          <div class="hero__actions" data-animate="fade-up" data-delay="3">
+            <a href="login.html" class="btn btn--primary btn--lg" id="hero-cta">
+              Open Dashboard
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+
+          <div class="hero__social-proof" data-animate="fade-up" data-delay="4">
+            <div class="proof__avatars">
+              <img src="https://i.pravatar.cc/40?img=1" alt="Student" />
+              <img src="https://i.pravatar.cc/40?img=5" alt="Student" />
+              <img src="https://i.pravatar.cc/40?img=9" alt="Student" />
+            </div>
+            <div class="proof__text">
+              <strong>12,000+</strong> students connected
+            </div>
+          </div>
         </div>
 
-        <div class="line"></div>
+        <div class="hero__visual" data-animate="fade-left" data-delay="2">
+          <div class="hero__card-cluster">
+            <!-- Floating Card 1 -->
+            <div class="float-card float-card--main">
+              <div class="fcard__header">
+                <div class="fcard__avatar">
+                  <img src="https://i.pravatar.cc/48?img=33" alt="Instructor" />
+                </div>
+                <div>
+                  <p class="fcard__name">Prof. Anderson</p>
+                  <p class="fcard__role">Next Class: Physics 101</p>
+                </div>
+              </div>
+              <div class="fcard__progress-wrap">
+                <div class="fcard__progress-label">
+                  <span>Semester Progress</span>
+                  <span>45%</span>
+                </div>
+                <div class="fcard__progress-bar">
+                  <div class="fcard__progress-fill" style="--pct:45%"></div>
+                </div>
+              </div>
+              <div class="fcard__tags">
+                <span class="tag">Room 304</span>
+                <span class="tag">Starts in 10m</span>
+              </div>
+            </div>
 
-        <div class="step reverse">
-          <div class="step-card">
-            <h3>Uploading audio or video file</h3>
-            <p class="muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur.</p>
-            <br />
-            <a href="#" class="btn">Upload file</a>
-          </div>
-          <div class="placeholder"></div>
-        </div>
+            <!-- Floating Card 2 — Stats -->
+            <div class="float-card float-card--stat float-card--stat-1">
+              <div class="stat-card__icon">📈</div>
+              <div>
+                <p class="stat-card__value">3.8</p>
+                <p class="stat-card__label">Current GPA</p>
+              </div>
+            </div>
 
-        <div class="step">
-          <div class="step-card">
-            <h3>Find out what to do</h3>
-            <p class="muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur.</p>
-            <br />
-            <a href="#" class="btn">See answer</a>
+            <!-- Floating Card 3 — Notification -->
+            <div class="float-card float-card--notif">
+              <div class="notif__icon">🔔</div>
+              <div>
+                <p class="notif__title">Schedule Update</p>
+                <p class="notif__sub">Calculus moved to Room 210</p>
+              </div>
+            </div>
           </div>
-          <div class="placeholder"></div>
-        </div>
-
-        <div class="step reverse">
-          <div class="step-card">
-            <h3>Download your file</h3>
-            <p class="muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur.</p>
-            <br />
-            <a href="#" class="btn">Download file</a>
-          </div>
-          <div class="placeholder"></div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <section class="benefits">
+      <!-- Scroll Indicator -->
+      <div class="hero__scroll">
+        <span>Scroll to explore</span>
+        <div class="scroll-dot"></div>
+      </div>
+    </section>
+
+    <!-- ========== STATS BAR ========== -->
+    <section class="stats-bar" id="stats">
+      <div class="container">
+        <div class="stats-bar__inner">
+          <div class="stat-item" data-animate="fade-up" data-delay="0">
+            <p class="stat-item__value" data-count="12500" data-suffix="+">0</p>
+            <p class="stat-item__label">Active Students</p>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item" data-animate="fade-up" data-delay="1">
+            <p class="stat-item__value" data-count="35" data-suffix="">0</p>
+            <p class="stat-item__label">Campus Features</p>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item" data-animate="fade-up" data-delay="2">
+            <p class="stat-item__value" data-count="24" data-suffix="/7">0</p>
+            <p class="stat-item__label">Library Access</p>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item" data-animate="fade-up" data-delay="3">
+            <p class="stat-item__value" data-count="98" data-suffix="%">0</p>
+            <p class="stat-item__label">Satisfaction</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FEATURES SECTION ========== -->
+    <section class="features section-pad" id="features">
+      <div class="container">
+        <div class="features__header" data-animate="fade-up" data-delay="0">
+          <span class="section-eyebrow">Everything You Need</span>
+          <h2 class="section-title">Designed for <em>Students</em></h2>
+          <p class="section-sub">From finding your next class to checking your grades and reserving a study room — the
+            Campus Student App simplifies your university life.</p>
+        </div>
+
+        <div class="features__grid">
+          <!-- Card 1 — Large -->
+          <div class="feat-card feat-card--large" data-animate="fade-up" data-delay="1">
+            <div class="feat-card__icon-wrap" style="--icon-clr: hsl(258,90%,66%)">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                <line x1="16" y1="2" x2="16" y2="6" />
+                <line x1="8" y1="2" x2="8" y2="6" />
+                <line x1="3" y1="10" x2="21" y2="10" />
+              </svg>
+            </div>
+            <h3 class="feat-card__title">Live Class Schedule</h3>
+            <p class="feat-card__desc">Never miss a class. View your daily timetable, get real-time notifications for
+              room changes, and sync with your personal calendar.</p>
+            <div class="feat-card__pill">Smart Sync</div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="feat-card" data-animate="fade-up" data-delay="2">
+            <div class="feat-card__icon-wrap" style="--icon-clr: hsl(192,88%,58%)">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+              </svg>
+            </div>
+            <h3 class="feat-card__title">Digital Grade Book</h3>
+            <p class="feat-card__desc">Track your academic progress securely. View exam results, assignments, and your
+              overall GPA instantly.</p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="feat-card" data-animate="fade-up" data-delay="3">
+            <div class="feat-card__icon-wrap" style="--icon-clr: hsl(42,95%,62%)">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+            </div>
+            <h3 class="feat-card__title">Campus Map & Nav</h3>
+            <p class="feat-card__desc">Lost? Use our interactive map to find faculty buildings, library sections, and
+              the nearest cafeteria.</p>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="feat-card" data-animate="fade-up" data-delay="2">
+            <div class="feat-card__icon-wrap" style="--icon-clr: hsl(155,70%,52%)">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+              </svg>
+            </div>
+            <h3 class="feat-card__title">Group Chats</h3>
+            <p class="feat-card__desc">Connect with your classmates effortlessly. Dedicated channels for every course
+              you are enrolled in.</p>
+          </div>
+
+          <!-- Card 5 — Large -->
+          <div class="feat-card feat-card--large feat-card--dark" data-animate="fade-up" data-delay="3">
+            <div class="feat-card__icon-wrap" style="--icon-clr: hsl(258,90%,74%)">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                <line x1="16" y1="2" x2="16" y2="6" />
+                <line x1="8" y1="2" x2="8" y2="6" />
+                <line x1="3" y1="10" x2="21" y2="10" />
+              </svg>
+            </div>
+            <h3 class="feat-card__title">Events & Life</h3>
+            <p class="feat-card__desc">Register for student events, book library study rooms, or pre-order your lunch
+              from the cafeteria — all from your phone.</p>
+            <div class="feat-card__devices">
+              <div class="device-pill">🎉 Events</div>
+              <div class="device-pill">📚 Library</div>
+              <div class="device-pill">🍔 Food</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CTA BANNER ========== -->
+    <section class="cta-banner section-pad">
+      <div class="container">
+        <div class="cta-banner__inner" data-animate="fade-up">
+          <div class="cta-banner__glow"></div>
+          <div class="cta-banner__content">
+            <h2 class="cta-banner__title">Ready to explore <em>CampusApp</em>?</h2>
+            <p class="cta-banner__sub">Log in with your university email to access your personalized schedule and
+              dashboard.</p>
+            <div class="cta-banner__actions">
+              <a href="login.html" class="btn btn--primary btn--lg">Sign In to Dashboard</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
     <div class="container">
-      <div class="benefits-head">
-        <h2>Benefits form using our <span>Campus App</span></h2>
-        <p class="muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      </div>
-
-      <div class="benefit-grid">
-        <div class="benefit-card featured">
-          <div class="dot"></div>
-          <p class="muted" style="color:#f3e9ff;">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          <h4>Multi language</h4>
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="index.html" class="navbar__logo">
+            <span class="logo-icon">🎓</span>
+            <span class="logo-text">CampusApp</span>
+          </a>
+          <p style="color:var(--clr-text-muted); font-size:var(--fs-sm); max-width:300px;">
+            The complete digital ecosystem for modern students. Plan, learn, and connect.
+          </p>
         </div>
-        <div class="benefit-card">
-          <div class="dot"></div>
-          <p class="muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          <h4>For Personalized use</h4>
-        </div>
-        <div class="benefit-card">
-          <div class="dot"></div>
-          <p class="muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          <h4>Wide target audience</h4>
-        </div>
-        <div class="benefit-card">
-          <div class="dot"></div>
-          <p class="muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          <h4>Integration payment</h4>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <section class="pricing">
-    <div class="container">
-      <div class="pricing-head">
-        <h2>Affordable Plans for <span>Every Need</span></h2>
-        <p class="muted">Choose the perfect plan for your design projects, from startups to enterprises.</p>
-      </div>
-
-      <div class="toggle"></div>
-
-      <div class="price-grid">
-        <div class="price-card">
-          <h3>Basic</h3>
-          <div class="price">$0/m</div>
+        <div class="footer__links">
+          <h4>Platform</h4>
           <ul>
-            <li>Basic AI generation</li>
-            <li>Access to customization tools</li>
-            <li>Standard exports</li>
-            <li>Email support</li>
+            <li><a href="login.html">Schedule</a></li>
+            <li><a href="login.html">Grades</a></li>
+            <li><a href="login.html">Campus Map</a></li>
+            <li><a href="login.html">Messages</a></li>
           </ul>
-          <a href="#" class="btn-outline">Review Template</a>
         </div>
 
-        <div class="price-card featured">
-          <h3>Pro</h3>
-          <div class="price">$14.99/m</div>
+        <div class="footer__links">
+          <h4>University</h4>
           <ul>
-            <li>Advanced AI generation</li>
-            <li>Full access to customization tools</li>
-            <li>Premium templates</li>
-            <li>Priority support</li>
+            <li><a href="login.html">Portal</a></li>
+            <li><a href="login.html">Library</a></li>
+            <li><a href="login.html">Support</a></li>
           </ul>
-          <a href="#" class="btn-outline" style="border-color:#fff;">Review Template</a>
-        </div>
-
-        <div class="price-card">
-          <h3>Enterprise</h3>
-          <div class="price">$29.99/m</div>
-          <ul>
-            <li>All Pro features included</li>
-            <li>Dedicated account manager</li>
-            <li>Custom AI models and design</li>
-            <li>Secure cloud storage</li>
-          </ul>
-          <a href="#" class="btn-outline">Review Template</a>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="stories">
-    <div class="container">
-      <h2>Customer <span>Success</span><br />Stories</h2>
-      <p class="muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet.</p>
-
-      <div class="story-grid">
-        <div class="story-card">
-          <div class="person">
-            <div class="avatar"></div>
-            <strong>John D.</strong>
-          </div>
-          <p class="muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <div class="footer__bottom">
+        <p>© 2026 Campus University. All rights reserved.</p>
+        <div class="footer__status">
+          <span class="status-dot"></span> App systems operational
         </div>
-        <div class="story-card">
-          <div class="person">
-            <div class="avatar"></div>
-            <strong>Michael S.</strong>
-          </div>
-          <p class="muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
-        <div class="story-card">
-          <div class="person">
-            <div class="avatar"></div>
-            <strong>Sarah K.</strong>
-          </div>
-          <p class="muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="faq">
-    <div class="container">
-      <div class="faq-box">
-        <div>
-          <h2>Frequently Asked <span>Questions</span></h2>
-          <p class="muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
-        <div class="faq-list">
-          <div><span>Lorem ipsum dolor sit amet?</span><span>+</span></div>
-          <div><span>Lorem ipsum dolor sit amet?</span><span>+</span></div>
-          <div><span>Lorem ipsum dolor sit amet?</span><span>+</span></div>
-          <div><span>Lorem ipsum dolor sit amet?</span><span>+</span></div>
-          <div><span>Lorem ipsum dolor sit amet?</span><span>+</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="contact">
-    <div class="container">
-      <h2>Let’s get in <span>touch</span></h2>
-      <p class="muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet.</p>
-
-      <div class="contact-wrap">
-        <div class="form-box">
-          <input type="text" placeholder="About" />
-          <input type="email" placeholder="Email" />
-          <textarea placeholder="Message"></textarea>
-          <button class="btn submit-btn">Submit</button>
-        </div>
-
-        <div class="info-box">
-          <div class="info-item">
-            <strong>Email</strong>
-            <p class="muted">support@campus-app.io</p>
-          </div>
-          <div class="info-item">
-            <strong>Phone</strong>
-            <p class="muted">+9989330576472</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container footer-wrap">
-      <div>
-        <div class="logo">
-            <img src="./css/logo.png" alt="app-logo">
-            Campus App
-        </div>
-      </div>
-      <div class="footer-links">
-        <a href="#">How it Works</a>
-        <a href="#">Features</a>
-        <a href="#">Pricing</a>
-        <a href="#">Faqs</a>
-        <a href="#">Contact</a>
-      </div>
-      <div class="footer-bottom">
-        <span>Privacy Policy</span>
-        <span>Terms & Conditions</span>
       </div>
     </div>
   </footer>
-  <script src="./javascript/landing.js"></script>
+
+  <script src="js/main.js"></script>
 </body>
+
 </html>

@@ -1,0 +1,104 @@
+/* ============================================
+   STATS BAR SECTION
+   ============================================ */
+.stats-bar {
+  position: relative;
+  padding-block: var(--sp-12);
+  overflow: hidden;
+}
+
+/* Gradient dividing lines */
+.stats-bar::before,
+.stats-bar::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent,
+    var(--clr-border-light) 20%,
+    var(--clr-border-light) 80%,
+    transparent
+  );
+}
+
+.stats-bar::before { top: 0; }
+.stats-bar::after  { bottom: 0; }
+
+/* Ambient glow under bar */
+.stats-bar {
+  background:
+    radial-gradient(ellipse 60% 80% at 50% 50%, hsla(258,90%,60%,0.06), transparent);
+}
+
+.stats-bar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-8);
+  flex-wrap: wrap;
+}
+
+/* Individual stat */
+.stat-item {
+  flex: 1;
+  min-width: 120px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.stat-item__value {
+  font-family: var(--font-display);
+  font-size: clamp(var(--fs-2xl), 3.5vw, var(--fs-4xl));
+  font-weight: var(--fw-bold);
+  line-height: 1;
+  background: var(--grad-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
+  transition: transform var(--transition-spring);
+}
+
+.stat-item:hover .stat-item__value {
+  transform: scale(1.08);
+}
+
+.stat-item__label {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  color: var(--clr-text-muted);
+  letter-spacing: 0.02em;
+}
+
+/* Vertical dividers */
+.stat-divider {
+  width: 1px;
+  height: 48px;
+  background: linear-gradient(180deg, transparent, var(--clr-border-light), transparent);
+  flex-shrink: 0;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .stats-bar__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-8) var(--sp-4);
+    justify-items: center;
+  }
+
+  .stat-divider {
+    display: none;
+  }
+}
+
+@media (max-width: 400px) {
+  .stats-bar__inner {
+    grid-template-columns: 1fr;
+  }
+}

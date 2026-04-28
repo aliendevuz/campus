@@ -1,0 +1,102 @@
+/* ============================================
+   DESIGN TOKENS
+   ============================================ */
+:root {
+  /* --- Color Palette --- */
+  --clr-bg:           hsl(222, 28%, 6%);
+  --clr-bg-2:         hsl(222, 24%, 9%);
+  --clr-surface:      hsl(222, 20%, 12%);
+  --clr-surface-2:    hsl(222, 18%, 16%);
+  --clr-border:       hsl(222, 15%, 20%);
+  --clr-border-light: hsl(222, 15%, 26%);
+
+  /* Brand */
+  --clr-primary:      hsl(258, 90%, 66%);
+  --clr-primary-lt:   hsl(258, 90%, 74%);
+  --clr-primary-dk:   hsl(258, 90%, 54%);
+  --clr-accent:       hsl(192, 88%, 58%);
+  --clr-accent-warm:  hsl(42, 95%, 62%);
+  --clr-green:        hsl(155, 70%, 52%);
+
+  /* Text */
+  --clr-text:         hsl(220, 20%, 95%);
+  --clr-text-muted:   hsl(220, 12%, 62%);
+  --clr-text-faint:   hsl(220, 10%, 40%);
+
+  /* Gradients */
+  --grad-primary:     linear-gradient(135deg, var(--clr-primary), var(--clr-accent));
+  --grad-warm:        linear-gradient(135deg, var(--clr-primary), var(--clr-accent-warm));
+  --grad-surface:     linear-gradient(135deg, hsl(222,20%,14%), hsl(222,18%,10%));
+  --grad-glow-1:      radial-gradient(ellipse 60% 50% at 20% 30%, hsla(258,90%,60%,0.18), transparent);
+  --grad-glow-2:      radial-gradient(ellipse 50% 60% at 80% 70%, hsla(192,88%,58%,0.14), transparent);
+
+  /* --- Typography --- */
+  --font-sans:        'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-display:     'Fraunces', Georgia, serif;
+
+  --fs-xs:   0.75rem;
+  --fs-sm:   0.875rem;
+  --fs-base: 1rem;
+  --fs-md:   1.125rem;
+  --fs-lg:   1.25rem;
+  --fs-xl:   1.5rem;
+  --fs-2xl:  1.875rem;
+  --fs-3xl:  2.25rem;
+  --fs-4xl:  3rem;
+  --fs-5xl:  3.75rem;
+  --fs-6xl:  4.5rem;
+
+  --fw-light:    300;
+  --fw-regular:  400;
+  --fw-medium:   500;
+  --fw-semibold: 600;
+  --fw-bold:     700;
+  --fw-extrabold:800;
+
+  --lh-tight:   1.15;
+  --lh-snug:    1.35;
+  --lh-normal:  1.6;
+  --lh-relaxed: 1.75;
+
+  /* --- Spacing --- */
+  --sp-1:  0.25rem;
+  --sp-2:  0.5rem;
+  --sp-3:  0.75rem;
+  --sp-4:  1rem;
+  --sp-5:  1.25rem;
+  --sp-6:  1.5rem;
+  --sp-8:  2rem;
+  --sp-10: 2.5rem;
+  --sp-12: 3rem;
+  --sp-16: 4rem;
+  --sp-20: 5rem;
+  --sp-24: 6rem;
+  --sp-32: 8rem;
+
+  /* --- Border radius --- */
+  --radius-sm:   0.375rem;
+  --radius-md:   0.75rem;
+  --radius-lg:   1.25rem;
+  --radius-xl:   1.75rem;
+  --radius-full: 9999px;
+
+  /* --- Shadows --- */
+  --shadow-sm:  0 1px 3px hsla(0,0%,0%,0.3), 0 1px 2px hsla(0,0%,0%,0.2);
+  --shadow-md:  0 4px 12px hsla(0,0%,0%,0.35), 0 2px 6px hsla(0,0%,0%,0.2);
+  --shadow-lg:  0 10px 32px hsla(0,0%,0%,0.4), 0 4px 12px hsla(0,0%,0%,0.25);
+  --shadow-glow:0 0 32px hsla(258,90%,66%,0.3), 0 0 8px hsla(258,90%,66%,0.15);
+  --shadow-card:0 8px 32px hsla(0,0%,0%,0.45), 0 2px 8px hsla(0,0%,0%,0.3), inset 0 1px 0 hsla(255,100%,100%,0.05);
+
+  /* --- Transitions --- */
+  --transition-fast:   150ms ease;
+  --transition-base:   250ms ease;
+  --transition-slow:   400ms cubic-bezier(0.22, 1, 0.36, 1);
+  --transition-spring: 600ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* --- Z-index layers --- */
+  --z-base:    1;
+  --z-above:   10;
+  --z-overlay: 100;
+  --z-modal:   1000;
+  --z-nav:     9000;
+}
