@@ -17,6 +17,17 @@ const getProfile = async (req, res) => {
   res.json(req.user);
 };
 
+const listUsers = async (req, res) => {
+  try {
+    const users = await User.find({}, { _id: 1, name: 1, email: 1 }).sort({ name: 1 });
+    res.json(users);
+  } catch (error) {
+    res.status(500).json({
+      message: error.message
+    });
+  }
+};
+
 const updateProfile = async (req, res) => {
   try {
     const user = await User.findById(req.user._id);
@@ -52,5 +63,6 @@ const updateProfile = async (req, res) => {
 module.exports = {
   getDashboard,
   getProfile,
-  updateProfile
+  updateProfile,
+  listUsers
 };

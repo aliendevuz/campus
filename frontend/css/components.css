@@ -18,7 +18,20 @@
   white-space: nowrap;
   border: 1.5px solid transparent;
   position: relative;
-  overflow: hidden;
+  overflow: clip;
+  isolation: isolate;
+  -webkit-tap-highlight-color: transparent;
+  background-clip: padding-box;
+  transform: translateZ(0);
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--clr-accent);
+  outline-offset: 2px;
 }
 
 .btn--primary {

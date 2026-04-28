@@ -99,6 +99,10 @@ body.dashboard-body {
   z-index: var(--z-above);
 }
 
+html.theme-light .dash-header {
+  background: hsla(0, 0%, 100%, 0.9);
+}
+
 .header-search {
   position: relative;
   width: 300px;

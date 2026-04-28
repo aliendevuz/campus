@@ -112,44 +112,41 @@
               <h3 class="widget__title">🗨️ Your Chats</h3>
             </div>
             
-            <div style="display:flex; flex-direction:column; gap:0;">
-              <!-- Chat Item -->
-              <div style="display:flex; align-items:center; gap:var(--sp-4); padding:var(--sp-3) 0; border-bottom:1px solid var(--clr-border);">
-                <div style="width:48px; height:48px; border-radius:50%; background:var(--grad-primary); display:flex; align-items:center; justify-content:center; font-size:1.2rem; color:#fff;">P</div>
-                <div style="flex:1;">
-                  <div style="display:flex; justify-content:space-between;">
-                    <h4 style="font-size:var(--fs-base); margin-bottom:2px;">Physics 101 Group</h4>
-                    <span style="font-size:var(--fs-xs); color:var(--clr-text-muted);">10:42 AM</span>
-                  </div>
-                  <p style="font-size:var(--fs-sm); color:var(--clr-text-muted);">Sarah: Has anyone finished the lab report?</p>
-                </div>
-              </div>
-              
-              <!-- Chat Item -->
-              <div style="display:flex; align-items:center; gap:var(--sp-4); padding:var(--sp-3) 0; border-bottom:1px solid var(--clr-border);">
-                <div style="width:48px; height:48px; border-radius:50%; background:var(--grad-warm); display:flex; align-items:center; justify-content:center; font-size:1.2rem; color:#fff;">📢</div>
-                <div style="flex:1;">
-                  <div style="display:flex; justify-content:space-between;">
-                    <h4 style="font-size:var(--fs-base); margin-bottom:2px;">Campus-Wide Chat</h4>
-                    <span style="font-size:var(--fs-xs); color:var(--clr-text-muted);">Yesterday</span>
-                  </div>
-                  <p style="font-size:var(--fs-sm); color:var(--clr-text-muted);">Admin: Welcome back to campus! Don't forget...</p>
-                </div>
-              </div>
+            <div id="messages-state" style="font-size:var(--fs-sm); color:var(--clr-text-muted); margin-bottom:var(--sp-3);">Loading messages...</div>
 
-              <!-- Chat Item -->
-              <div style="display:flex; align-items:center; gap:var(--sp-4); padding:var(--sp-3) 0; border-bottom:1px solid var(--clr-border);">
-                <img src="https://i.pravatar.cc/100?img=33" style="width:48px; height:48px; border-radius:50%;" />
-                <div style="flex:1;">
-                  <div style="display:flex; justify-content:space-between;">
-                    <h4 style="font-size:var(--fs-base); margin-bottom:2px;">Prof. Anderson</h4>
-                    <span style="font-size:var(--fs-xs); color:var(--clr-text-muted);">Monday</span>
-                  </div>
-                  <p style="font-size:var(--fs-sm); color:var(--clr-text-muted);">Your consultation is confirmed for 4:00 PM.</p>
-                </div>
-              </div>
-
+            <div id="messages-list" style="display:flex; flex-direction:column; gap:0;">
             </div>
+
+            <form id="send-message-form" style="margin-top:var(--sp-4); display:grid; gap:var(--sp-3);">
+              <div style="display:grid; gap:var(--sp-2);">
+                <input
+                  id="receiver-search"
+                  class="form-input"
+                  type="text"
+                  placeholder="Search user by name or email..."
+                  style="background:var(--clr-surface-2); border:1px solid var(--clr-border); color:var(--clr-text); border-radius:var(--radius-md); padding:12px 14px; font-size:var(--fs-sm);"
+                />
+                <select
+                  id="receiver-select"
+                  class="form-input"
+                  required
+                  style="background:var(--clr-surface-2); border:1px solid var(--clr-border); color:var(--clr-text); border-radius:var(--radius-md); padding:12px 14px; font-size:var(--fs-sm);"
+                >
+                  <option value="">Select receiver...</option>
+                </select>
+              </div>
+              <textarea
+                id="message-text"
+                class="form-input"
+                placeholder="Write your message..."
+                required
+                style="min-height:110px; resize:vertical; background:var(--clr-surface-2); border:1px solid var(--clr-border); color:var(--clr-text); border-radius:var(--radius-md); padding:12px 14px; font-size:var(--fs-sm);"
+              ></textarea>
+              <div style="display:flex; justify-content:space-between; align-items:center; gap:var(--sp-2);">
+                <span style="font-size:var(--fs-xs); color:var(--clr-text-muted);">Pick a user and send securely through backend API.</span>
+                <button id="send-message-btn" type="button" class="btn btn--primary">Send Message</button>
+              </div>
+            </form>
           </div>
 
           <!-- Widget: Student Council -->
@@ -206,6 +203,10 @@
       </div>
     </main>
   </div>
+  <script src="js/api.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/auth.js"></script>
   <script src="js/dashboard.js"></script>
+  <script src="js/messages.js"></script>
 </body>
 </html>

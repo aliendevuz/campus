@@ -1,79 +1,26 @@
-/* ============================================
-   js/dashboard.js — Dashboard specific interactions
-   ============================================ */
+document.addEventListener("DOMContentLoaded", () => {
+  const THEME_KEY = "campus_theme";
+  const LANG_KEY = "campus_lang";
 
-document.addEventListener('DOMContentLoaded', () => {
-
-  /* ==========================================
-     1. Toast Notification System
-     ========================================== */
   const createToastContainer = () => {
-    let container = document.getElementById('toast-container');
+    let container = document.getElementById("toast-container");
     if (!container) {
-      container = document.createElement('div');
-      container.id = 'toast-container';
-      container.style.cssText = `
-        position: fixed;
-        bottom: 24px;
-        right: 24px;
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-        z-index: 9999;
-      `;
+      container = document.createElement("div");
+      container.id = "toast-container";
+      container.style.cssText = "position:fixed;bottom:24px;right:24px;display:flex;flex-direction:column;gap:12px;z-index:9999;";
       document.body.appendChild(container);
     }
     return container;
   };
 
-  const showToast = (message, type = 'info') => {
+  const showToast = (message, type = "info") => {
     const container = createToastContainer();
-    const toast = document.createElement('div');
-    
-    const bgColors = {
-      info: 'var(--clr-surface-2)',
-      success: 'var(--clr-green)',
-      warning: 'var(--clr-accent-warm)'
-    };
-    const textColors = {
-      info: 'var(--clr-text)',
-      success: '#000',
-      warning: '#000'
-    };
-
-    toast.style.cssText = `
-      background: ${bgColors[type] || bgColors.info};
-      color: ${textColors[type] || textColors.info};
-      padding: 12px 20px;
-      border-radius: 8px;
-      border: 1px solid var(--clr-border);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-      font-size: 14px;
-      font-weight: 500;
-      transform: translateX(100%);
-      opacity: 0;
-      transition: all 0.3s ease;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    `;
-
-    toast.innerHTML = `<span>${type === 'success' ? '✓' : type === 'warning' ? '⚠️' : 'ℹ️'}</span> ${message}`;
-    
+    const toast = document.createElement("div");
+    const bg = type === "success" ? "var(--clr-green)" : "var(--clr-surface-2)";
+    toast.style.cssText = `background:${bg};color:var(--clr-text);padding:12px 20px;border-radius:8px;border:1px solid var(--clr-border);font-size:14px;font-weight:500;`;
+    toast.textContent = message;
     container.appendChild(toast);
-
-    // Animate in
-    setTimeout(() => {
-      toast.style.transform = 'translateX(0)';
-      toast.style.opacity = '1';
-    }, 10);
-
-    // Animate out
-    setTimeout(() => {
-      toast.style.transform = 'translateX(100%)';
-      toast.style.opacity = '0';
-      setTimeout(() => toast.remove(), 300);
-    }, 3000);
+    setTimeout(() => toast.remove(), 2200);
   };
 
   /* ==========================================
@@ -81,17 +28,17 @@ document.addEventListener('DOMContentLoaded', () => {
      ========================================== */
   const openModal = (title, bodyContent) => {
     // Check if overlay exists
-    let overlay = document.querySelector('.modal-overlay');
+    let overlay = document.querySelector(".modal-overlay");
     if (!overlay) {
       overlay = document.createElement('div');
-      overlay.className = 'modal-overlay';
+      overlay.className = "modal-overlay";
       document.body.appendChild(overlay);
 
       // Close modal on click outside
-      overlay.addEventListener('click', (e) => {
+      overlay.addEventListener("click", (e) => {
         if (e.target === overlay) {
-          overlay.classList.remove('active');
-          setTimeout(() => overlay.innerHTML = '', 300);
+          overlay.classList.remove("active");
+          setTimeout(() => (overlay.innerHTML = ""), 300);
         }
       });
     }
@@ -116,26 +63,27 @@ document.addEventListener('DOMContentLoaded', () => {
         </form>
       </div>
     `;
+    window.i18n?.translatePage?.(overlay);
 
     // Show modal
-    requestAnimationFrame(() => overlay.classList.add('active'));
+    requestAnimationFrame(() => overlay.classList.add("active"));
 
     // Handle Close
-    const closeBtn = overlay.querySelector('.modal-close');
-    const cancelBtn = overlay.querySelector('.modal-cancel');
+    const closeBtn = overlay.querySelector(".modal-close");
+    const cancelBtn = overlay.querySelector(".modal-cancel");
     const closeAction = () => {
-      overlay.classList.remove('active');
-      setTimeout(() => overlay.innerHTML = '', 300);
+      overlay.classList.remove("active");
+      setTimeout(() => (overlay.innerHTML = ""), 300);
     };
-    closeBtn.addEventListener('click', closeAction);
-    cancelBtn.addEventListener('click', closeAction);
+    closeBtn.addEventListener("click", closeAction);
+    cancelBtn.addEventListener("click", closeAction);
 
     // Handle Submit
-    const form = overlay.querySelector('.modal-form');
-    form.addEventListener('submit', (e) => {
+    const form = overlay.querySelector(".modal-form");
+    form.addEventListener("submit", (e) => {
       e.preventDefault();
       closeAction();
-      showToast(`${title} request submitted successfully!`, 'success');
+      showToast(`${title} request submitted successfully!`, "success");
     });
   };
 
@@ -144,21 +92,25 @@ document.addEventListener('DOMContentLoaded', () => {
      ========================================== */
   
   // All regular buttons
-  document.querySelectorAll('.btn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      // Allow modal buttons or links to work normally
-      if (btn.classList.contains('modal-cancel') || btn.closest('.modal-content') || btn.tagName === 'A') return;
-      
+  document.querySelectorAll(".btn").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      if (
+        btn.classList.contains("modal-cancel") ||
+        btn.closest(".modal-content") ||
+        btn.tagName === "A" ||
+        btn.id === "send-message-btn"
+      ) {
+        return;
+      }
+
       e.preventDefault();
       const text = btn.textContent.trim();
-      
-      // Simple click effect
-      btn.style.transform = 'scale(0.95)';
-      setTimeout(() => btn.style.transform = '', 150);
 
-      // Check specific buttons to open modals
-      if (text.includes('Pre-order')) {
-        openModal('Pre-order Food', `
+      btn.style.transform = "scale(0.95)";
+      setTimeout(() => (btn.style.transform = ""), 150);
+
+      if (text.includes("Pre-order")) {
+        openModal("Pre-order Food", `
           <label>Select Item</label>
           <select>
             <option>Grilled Chicken Bowl - $6.50</option>
@@ -168,30 +120,31 @@ document.addEventListener('DOMContentLoaded', () => {
           <label style="margin-top:12px;">Pickup Time</label>
           <input type="time" value="12:30" />
         `);
-      } else if (text.includes('Sign Up') || text.includes('RSVP')) {
-        showToast(`Successfully registered!`, 'success');
-        btn.textContent = 'Enrolled';
-        btn.classList.remove('btn--primary');
-        btn.classList.add('btn--outline');
-      } else if (text.includes('Yes') || text.includes('No')) {
-        showToast('Your vote has been recorded.', 'success');
+      } else if (text.includes("Sign Up") || text.includes("RSVP")) {
+        showToast("Successfully registered!", "success");
+        btn.textContent = "Enrolled";
+        btn.classList.remove("btn--primary");
+        btn.classList.add("btn--outline");
+      } else if (text.includes("Yes") || text.includes("No")) {
+        showToast("Your vote has been recorded.", "success");
       } else {
         showToast(`Action triggered: ${text}`);
       }
     });
   });
 
-  // Action Grid Buttons (Quick Actions)
-  document.querySelectorAll('.action-btn').forEach(btn => {
-    btn.addEventListener('click', function(e) {
+  document.querySelectorAll(".action-btn").forEach((btn) => {
+    btn.addEventListener("click", function (e) {
       e.preventDefault();
-      this.style.transform = 'scale(0.95)';
-      setTimeout(() => this.style.transform = '', 150);
-      
-      const text = this.querySelector('span:not(.action-icon)') ? this.querySelector('span:not(.action-icon)').textContent.trim() : this.textContent.trim();
-      
-      if (text.includes('Book Study Room')) {
-        openModal('Book Study Room', `
+      this.style.transform = "scale(0.95)";
+      setTimeout(() => (this.style.transform = ""), 150);
+
+      const text = this.querySelector("span:not(.action-icon)")
+        ? this.querySelector("span:not(.action-icon)").textContent.trim()
+        : this.textContent.trim();
+
+      if (text.includes("Book Study Room")) {
+        openModal("Book Study Room", `
           <label>Date</label>
           <input type="date" />
           <label style="margin-top:12px;">Duration</label>
@@ -199,8 +152,8 @@ document.addEventListener('DOMContentLoaded', () => {
           <label style="margin-top:12px;">Capacity</label>
           <select><option>1-2 People</option><option>3-5 People</option><option>6+ People</option></select>
         `);
-      } else if (text.includes('Pre-order Food')) {
-        openModal('Pre-order Food', `
+      } else if (text.includes("Pre-order Food")) {
+        openModal("Pre-order Food", `
           <label>Select Item</label>
           <select>
             <option>Grilled Chicken Bowl - $6.50</option>
@@ -210,15 +163,15 @@ document.addEventListener('DOMContentLoaded', () => {
           <label style="margin-top:12px;">Pickup Time</label>
           <input type="time" value="12:30" />
         `);
-      } else if (text.includes('Consult Prof') || text.includes('Contact Advisor')) {
-        openModal('Request Consultation', `
+      } else if (text.includes("Consult Prof") || text.includes("Contact Advisor")) {
+        openModal("Request Consultation", `
           <label>Message / Topic</label>
           <textarea placeholder="Briefly describe what you'd like to discuss..."></textarea>
           <label style="margin-top:12px;">Preferred Availability</label>
           <select><option>Morning (9 AM - 12 PM)</option><option>Afternoon (1 PM - 4 PM)</option></select>
         `);
-      } else if (text.includes('Request Docs') || text.includes('Request Transcript')) {
-        openModal('Request Document', `
+      } else if (text.includes("Request Docs") || text.includes("Request Transcript")) {
+        openModal("Request Document", `
           <label>Document Type</label>
           <select>
             <option>Official Transcript</option>
@@ -234,15 +187,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Form links (e.g. "View Full", "See all", etc.)
-  document.querySelectorAll('.form-link').forEach(link => {
-    link.addEventListener('click', (e) => {
-      if(link.getAttribute('href') === '#') {
+  document.querySelectorAll(".form-link").forEach((link) => {
+    link.addEventListener("click", (e) => {
+      if (link.getAttribute("href") === "#") {
         e.preventDefault();
         const text = link.textContent.trim();
-        
-        if (text.includes('Request Official Documents') || text.includes('Request Transcript')) {
-          openModal('Request Document', `
+
+        if (text.includes("Request Official Documents") || text.includes("Request Transcript")) {
+          openModal("Request Document", `
             <label>Document Type</label>
             <select>
               <option>Official Transcript</option>
@@ -252,8 +204,8 @@ document.addEventListener('DOMContentLoaded', () => {
             <label style="margin-top:12px;">Delivery Method</label>
             <select><option>Digital (PDF to Email)</option><option>Printed (Pick up at Admin)</option></select>
           `);
-        } else if (text.includes('Pay Dorm Fees')) {
-          openModal('Pay Dorm Fees', `
+        } else if (text.includes("Pay Dorm Fees")) {
+          openModal("Pay Dorm Fees", `
             <label>Payment Amount</label>
             <input type="text" value="$450.00" disabled />
             <label style="margin-top:12px;">Payment Method</label>
@@ -262,8 +214,8 @@ document.addEventListener('DOMContentLoaded', () => {
               <option>Bank Transfer</option>
             </select>
           `);
-        } else if (text.includes('Track Document Status')) {
-          openModal('Document Status', `
+        } else if (text.includes("Track Document Status")) {
+          openModal("Document Status", `
             <div style="padding:12px; background:var(--clr-surface-2); border-radius:4px;">
               <strong>Proof of Enrollment</strong><br/>
               Status: <span style="color:var(--clr-green);">Ready for pickup</span>
@@ -273,110 +225,81 @@ document.addEventListener('DOMContentLoaded', () => {
               Status: <span style="color:var(--clr-accent-warm);">Processing (Est. 2 days)</span>
             </div>
           `);
-        } else if (text.includes('Book Consult')) {
-          openModal('Request Consultation', `
+        } else if (text.includes("Book Consult")) {
+          openModal("Request Consultation", `
             <label>Message / Topic</label>
             <textarea placeholder="Briefly describe what you'd like to discuss..."></textarea>
             <label style="margin-top:12px;">Preferred Availability</label>
             <select><option>Morning (9 AM - 12 PM)</option><option>Afternoon (1 PM - 4 PM)</option></select>
           `);
-        } else if (text.includes('Read Council News')) {
-           showToast('Opening Student Council News...', 'info');
+        } else if (text.includes("Read Council News")) {
+          showToast("Opening Student Council News...", "info");
         } else {
-          showToast('Navigating to full view...');
+          showToast("Navigating to full view...");
         }
       }
     });
   });
 
-  // Header Search Input
-  const searchInput = document.querySelector('.header-search input');
+  const searchInput = document.querySelector(".header-search input");
   if (searchInput) {
-    searchInput.addEventListener('keypress', (e) => {
-      if (e.key === 'Enter') {
+    searchInput.addEventListener("keypress", (e) => {
+      if (e.key === "Enter") {
         showToast(`Searching for: "${searchInput.value}"`);
-        searchInput.value = '';
+        searchInput.value = "";
       }
     });
   }
 
-  // Header Notification Bell
-  const notifBtn = document.querySelector('.header-icon-btn');
+  const notifBtn = document.querySelector(".header-icon-btn");
   if (notifBtn) {
-    notifBtn.addEventListener('click', () => {
-      showToast('You have 2 new notifications.', 'info');
-      const badge = notifBtn.querySelector('.notif-badge');
-      if(badge) badge.style.display = 'none';
+    notifBtn.addEventListener("click", () => {
+      showToast("You have 2 new notifications.", "info");
+      const badge = notifBtn.querySelector(".notif-badge");
+      if (badge) badge.style.display = "none";
     });
   }
 
-  /* ==========================================
-     3. Dark Mode Toggle
-     ========================================== */
-  const darkToggle = document.querySelector('input[type="checkbox"]');
-  if (darkToggle && darkToggle.closest('div').textContent.includes('Dark Mode')) {
-    darkToggle.addEventListener('change', (e) => {
-      if (!e.target.checked) {
-        showToast('Light mode is still under construction by the design team.', 'warning');
-        setTimeout(() => e.target.checked = true, 1000);
-      }
-    });
-  }
-
-  /* ==========================================
-     4. Language Integration
-     ========================================== */
-  const langSelect = document.querySelector('.dash-sidebar__footer select');
-  
-  // Basic Translation Dictionary for Sidebar & Common UI
-  const translations = {
-    'Overview': { 'Russian': 'Обзор', 'Uzbek': 'Umumiy ko\'rinish' },
-    'Schedule': { 'Russian': 'Расписание', 'Uzbek': 'Dars jadvali' },
-    'Grade Book': { 'Russian': 'Оценки', 'Uzbek': 'Baholar' },
-    'Campus Map': { 'Russian': 'Карта', 'Uzbek': 'Xarita' },
-    'Messages': { 'Russian': 'Сообщения', 'Uzbek': 'Xabarlar' },
-    'Language': { 'Russian': 'Язык', 'Uzbek': 'Til' },
-    'Dark Mode': { 'Russian': 'Темная тема', 'Uzbek': 'Tungi rejim' },
-    'Log Out': { 'Russian': 'Выйти', 'Uzbek': 'Chiqish' },
-    'Search courses, news, faculty...': { 'Russian': 'Поиск курсов, новостей...', 'Uzbek': 'Qidirish...' }
+  const getControls = () => {
+    const footerRows = document.querySelectorAll(".dash-sidebar__footer > div > div");
+    const langRow = footerRows[0];
+    const themeRow = footerRows[1];
+    const langSelect = langRow?.querySelector("select");
+    const darkToggle = themeRow?.querySelector("input[type='checkbox']");
+    return { langSelect, darkToggle };
   };
 
+  const applyTheme = (theme) => {
+    document.documentElement.classList.toggle("theme-light", theme === "light");
+  };
+
+  const { langSelect, darkToggle } = getControls();
+  const savedLang = window.i18n?.getLanguage?.() || localStorage.getItem(LANG_KEY) || "English";
+  const savedTheme = localStorage.getItem(THEME_KEY) || "dark";
+  applyTheme(savedTheme);
+  window.i18n?.setLanguage?.(savedLang);
+
   if (langSelect) {
-    langSelect.addEventListener('change', (e) => {
+    const options = Array.from(langSelect.options);
+    if (options.length >= 3) {
+      options[0].value = "English";
+      options[1].value = "Russian";
+      options[2].value = "Uzbek";
+    }
+    langSelect.value = savedLang;
+    langSelect.addEventListener("change", (e) => {
       const lang = e.target.value;
-      
-      if (lang === 'English') {
-        window.location.reload(); // Quick reset to English
-        return;
-      }
-
-      showToast(`Language switched to ${lang}`, 'success');
-
-      // Translate Sidebar Links
-      document.querySelectorAll('.dash-nav__link').forEach(link => {
-        const textNode = Array.from(link.childNodes).find(node => node.nodeType === 3 && node.textContent.trim().length > 0);
-        if (textNode) {
-          const originalText = textNode.textContent.trim();
-          if (translations[originalText] && translations[originalText][lang]) {
-            textNode.textContent = ' ' + translations[originalText][lang];
-          }
-        }
-      });
-
-      // Translate Footer Labels
-      document.querySelectorAll('.dash-sidebar__footer span').forEach(span => {
-        const originalText = span.textContent.trim();
-        if (translations[originalText] && translations[originalText][lang]) {
-          span.textContent = translations[originalText][lang];
-        }
-      });
-
-      // Translate Search Placeholder
-      if (searchInput && translations['Search courses, news, faculty...'][lang]) {
-         searchInput.placeholder = translations['Search courses, news, faculty...'][lang];
-      }
-
+      window.i18n?.setLanguage?.(lang);
+      showToast(`Language switched to ${lang}`, "success");
     });
   }
 
+  if (darkToggle) {
+    darkToggle.checked = savedTheme === "dark";
+    darkToggle.addEventListener("change", (e) => {
+      const theme = e.target.checked ? "dark" : "light";
+      localStorage.setItem(THEME_KEY, theme);
+      applyTheme(theme);
+    });
+  }
 });

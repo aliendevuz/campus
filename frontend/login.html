@@ -28,7 +28,7 @@
         <p class="auth-sub">Log in with your university email.</p>
       </div>
 
-      <form action="dashboard.html" class="auth-form" method="GET">
+      <form id="login-form" class="auth-form" method="POST">
         <div class="form-group">
           <label for="email" class="form-label">University Email</label>
           <input type="email" id="email" class="form-input" placeholder="student.name@university.edu" required />
@@ -48,6 +48,7 @@
         </div>
 
         <button type="submit" class="btn btn--primary btn--full">Sign In</button>
+        <p id="login-error" style="display:none;margin-top:12px;color:#ff6b6b;font-size:14px;"></p>
       </form>
 
       <div class="auth-footer">
@@ -56,6 +57,9 @@
     </div>
   </main>
 
+  <script src="js/api.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/auth.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

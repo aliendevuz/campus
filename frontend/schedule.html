@@ -113,46 +113,17 @@
             <div class="widget__header">
               <h3 class="widget__title">📅 Classes & Seminars</h3>
               <div style="display:flex; gap:var(--sp-2);">
-                <select style="background:var(--clr-surface-2); border:1px solid var(--clr-border); color:var(--clr-text); padding:4px 8px; border-radius:var(--radius-sm);">
-                  <option>Monday</option>
-                  <option selected>Tuesday</option>
-                  <option>Wednesday</option>
-                  <option>Thursday</option>
-                  <option>Friday</option>
+                <select id="weekday-filter" style="background:var(--clr-surface-2); border:1px solid var(--clr-border); color:var(--clr-text); padding:4px 8px; border-radius:var(--radius-sm);">
+                  <option value="1">Monday</option>
+                  <option value="2" selected>Tuesday</option>
+                  <option value="3">Wednesday</option>
+                  <option value="4">Thursday</option>
+                  <option value="5">Friday</option>
                 </select>
               </div>
             </div>
-            
-            <div class="timeline" style="margin-top:var(--sp-4);">
-              <div class="timeline-item">
-                <div class="time-col">09:00 AM<br/><span style="color:var(--clr-primary-lt);font-size:10px;">Ongoing</span></div>
-                <div class="card-col" style="border-left-color: var(--clr-primary);">
-                  <h4>Physics 101 — Mechanics</h4>
-                  <p>Building B, Room 304 • Prof. Anderson</p>
-                </div>
-              </div>
-              <div class="timeline-item">
-                <div class="time-col">11:30 AM</div>
-                <div class="card-col" style="border-left-color: var(--clr-accent);">
-                  <h4>Intro to Computer Science</h4>
-                  <p>Lab 4 • Dr. Peterson</p>
-                </div>
-              </div>
-              <div class="timeline-item">
-                <div class="time-col">02:00 PM</div>
-                <div class="card-col" style="border-left-color: var(--clr-green);">
-                  <h4>Calculus III</h4>
-                  <p>Building C, Room 210 • Prof. Davis</p>
-                  <p style="color:var(--clr-accent-warm); font-size:var(--fs-xs); margin-top:4px;">⚠️ Room Changed (was Room 101)</p>
-                </div>
-              </div>
-              <div class="timeline-item">
-                <div class="time-col">04:00 PM</div>
-                <div class="card-col" style="border-left-color: var(--clr-text-muted);">
-                  <h4>Faculty Consultation</h4>
-                  <p>Office 402 • Dr. Peterson</p>
-                </div>
-              </div>
+            <div id="schedule-state" style="margin-top:var(--sp-4); font-size:var(--fs-sm); color:var(--clr-text-muted);">Loading schedule...</div>
+            <div id="schedule-timeline" class="timeline" style="margin-top:var(--sp-4);">
             </div>
           </div>
 
@@ -180,48 +151,18 @@
             <div class="widget__header">
               <h3 class="widget__title">🎉 Upcoming Campus Events</h3>
             </div>
-            <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:var(--sp-4);">
-              <div style="display:flex; gap:var(--sp-4); align-items:center; background:var(--clr-surface-2); padding:var(--sp-4); border-radius:var(--radius-md);">
-                <div style="background:var(--clr-primary); color:#fff; width:50px; height:50px; border-radius:var(--radius-sm); display:flex; flex-direction:column; align-items:center; justify-content:center; font-weight:bold; line-height:1.1;">
-                  <span style="font-size:12px;text-transform:uppercase;">Oct</span>
-                  <span style="font-size:18px;">15</span>
-                </div>
-                <div style="flex:1;">
-                  <h4 style="font-size:var(--fs-base); margin-bottom:2px;">Fall Tech Hackathon</h4>
-                  <p style="font-size:var(--fs-xs); color:var(--clr-text-muted);">Main Quad • 10:00 AM</p>
-                </div>
-                <button class="btn btn--primary" style="padding:4px 12px; font-size:var(--fs-xs);">RSVP</button>
-              </div>
-              
-              <div style="display:flex; gap:var(--sp-4); align-items:center; background:var(--clr-surface-2); padding:var(--sp-4); border-radius:var(--radius-md);">
-                <div style="background:var(--clr-surface); border:1px solid var(--clr-border); width:50px; height:50px; border-radius:var(--radius-sm); display:flex; flex-direction:column; align-items:center; justify-content:center; font-weight:bold; line-height:1.1;">
-                  <span style="font-size:12px;text-transform:uppercase;color:var(--clr-text-muted);">Oct</span>
-                  <span style="font-size:18px;">18</span>
-                </div>
-                <div style="flex:1;">
-                  <h4 style="font-size:var(--fs-base); margin-bottom:2px;">Career Fair 2026</h4>
-                  <p style="font-size:var(--fs-xs); color:var(--clr-text-muted);">Student Center • 9:00 AM</p>
-                </div>
-                <button class="btn btn--outline" style="padding:4px 12px; font-size:var(--fs-xs);">RSVP</button>
-              </div>
-              
-              <div style="display:flex; gap:var(--sp-4); align-items:center; background:var(--clr-surface-2); padding:var(--sp-4); border-radius:var(--radius-md);">
-                <div style="background:var(--clr-surface); border:1px solid var(--clr-border); width:50px; height:50px; border-radius:var(--radius-sm); display:flex; flex-direction:column; align-items:center; justify-content:center; font-weight:bold; line-height:1.1;">
-                  <span style="font-size:12px;text-transform:uppercase;color:var(--clr-text-muted);">Oct</span>
-                  <span style="font-size:18px;">22</span>
-                </div>
-                <div style="flex:1;">
-                  <h4 style="font-size:var(--fs-base); margin-bottom:2px;">Guest Lecture: AI Ethics</h4>
-                  <p style="font-size:var(--fs-xs); color:var(--clr-text-muted);">Auditorium A • 4:00 PM</p>
-                </div>
-                <button class="btn btn--outline" style="padding:4px 12px; font-size:var(--fs-xs);">RSVP</button>
-              </div>
+            <div id="events-state" style="font-size:var(--fs-sm); color:var(--clr-text-muted); margin-bottom:var(--sp-3);">Loading events...</div>
+            <div id="events-grid" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:var(--sp-4);">
             </div>
           </div>
         </div>
       </div>
     </main>
   </div>
+  <script src="js/api.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/auth.js"></script>
   <script src="js/dashboard.js"></script>
+  <script src="js/schedule.js"></script>
 </body>
 </html>

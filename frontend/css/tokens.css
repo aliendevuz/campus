@@ -100,3 +100,22 @@
   --z-modal:   1000;
   --z-nav:     9000;
 }
+
+/* Light theme overrides */
+html.theme-light {
+  --clr-bg:           hsl(0, 0%, 97%);
+  --clr-bg-2:         hsl(0, 0%, 94%);
+  --clr-surface:      hsl(0, 0%, 100%);
+  --clr-surface-2:    hsl(220, 20%, 96%);
+  --clr-border:       hsl(220, 14%, 84%);
+  --clr-border-light: hsl(220, 14%, 74%);
+
+  --clr-text:         hsl(222, 28%, 12%);
+  --clr-text-muted:   hsl(222, 12%, 38%);
+  --clr-text-faint:   hsl(222, 10%, 52%);
+
+  --shadow-sm:  0 1px 3px hsla(0,0%,0%,0.08), 0 1px 2px hsla(0,0%,0%,0.06);
+  --shadow-md:  0 4px 12px hsla(0,0%,0%,0.10), 0 2px 6px hsla(0,0%,0%,0.08);
+  --shadow-lg:  0 10px 32px hsla(0,0%,0%,0.12), 0 4px 12px hsla(0,0%,0%,0.08);
+  --shadow-card:0 8px 24px hsla(0,0%,0%,0.08), 0 2px 8px hsla(0,0%,0%,0.05), inset 0 1px 0 hsla(255,100%,100%,0.8);
+}

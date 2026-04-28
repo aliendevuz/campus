@@ -114,20 +114,20 @@
           <!-- Widget: Summary Stats -->
           <div class="widget widget--span-4" style="text-align:center; padding-block:var(--sp-8);">
             <h3 style="font-size:var(--fs-sm); color:var(--clr-text-muted); text-transform:uppercase; letter-spacing:0.05em;">Current GPA</h3>
-            <div style="font-family:var(--font-display); font-size:4rem; font-weight:var(--fw-bold); background:var(--grad-primary); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">3.84</div>
-            <p style="color:var(--clr-green); font-size:var(--fs-sm); font-weight:var(--fw-medium);">↑ Top 15% of Junior Year</p>
+            <div id="gpa-value" style="font-family:var(--font-display); font-size:4rem; font-weight:var(--fw-bold); background:var(--grad-primary); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">--</div>
+            <p id="gpa-subtext" style="color:var(--clr-green); font-size:var(--fs-sm); font-weight:var(--fw-medium);">Loading...</p>
           </div>
 
           <div class="widget widget--span-4" style="text-align:center; padding-block:var(--sp-8);">
             <h3 style="font-size:var(--fs-sm); color:var(--clr-text-muted); text-transform:uppercase; letter-spacing:0.05em;">Credits Earned</h3>
-            <div style="font-family:var(--font-display); font-size:4rem; font-weight:var(--fw-bold); color:var(--clr-text);">86</div>
-            <p style="color:var(--clr-text-muted); font-size:var(--fs-sm);">Out of 120 required</p>
+            <div id="credits-value" style="font-family:var(--font-display); font-size:4rem; font-weight:var(--fw-bold); color:var(--clr-text);">--</div>
+            <p id="credits-subtext" style="color:var(--clr-text-muted); font-size:var(--fs-sm);">Loading...</p>
           </div>
 
           <div class="widget widget--span-4" style="text-align:center; padding-block:var(--sp-8);">
             <h3 style="font-size:var(--fs-sm); color:var(--clr-text-muted); text-transform:uppercase; letter-spacing:0.05em;">Academic Rank</h3>
-            <div style="font-family:var(--font-display); font-size:4rem; font-weight:var(--fw-bold); color:var(--clr-accent-warm);">#42</div>
-            <p style="color:var(--clr-text-muted); font-size:var(--fs-sm);">Out of 320 students in cohort</p>
+            <div id="rank-value" style="font-family:var(--font-display); font-size:4rem; font-weight:var(--fw-bold); color:var(--clr-accent-warm);">--</div>
+            <p id="rank-subtext" style="color:var(--clr-text-muted); font-size:var(--fs-sm);">Loading...</p>
           </div>
 
           <!-- Widget: Course Grades -->
@@ -135,44 +135,8 @@
             <div class="widget__header">
               <h3 class="widget__title">Fall 2026 Semester Grades</h3>
             </div>
-            <div style="display:flex; flex-direction:column; gap:var(--sp-3);">
-              
-              <div style="display:flex; justify-content:space-between; align-items:center; background:var(--clr-surface-2); padding:var(--sp-4); border-radius:var(--radius-md);">
-                <div style="flex:1;">
-                  <h4 style="font-size:var(--fs-base);">Physics 101 — Mechanics</h4>
-                  <p style="font-size:var(--fs-xs); color:var(--clr-text-muted);">Prof. Anderson • 4 Credits</p>
-                </div>
-                <div style="width:200px; margin-right:var(--sp-6);">
-                  <div style="display:flex; justify-content:space-between; margin-bottom:4px; font-size:var(--fs-xs);"><span>Progress</span><span>92%</span></div>
-                  <div style="height:6px; background:var(--clr-surface); border-radius:3px; overflow:hidden;"><div style="width:92%; height:100%; background:var(--clr-primary);"></div></div>
-                </div>
-                <div style="font-size:var(--fs-xl); font-weight:var(--fw-bold); color:var(--clr-primary-lt); width:40px; text-align:right;">A-</div>
-              </div>
-
-              <div style="display:flex; justify-content:space-between; align-items:center; background:var(--clr-surface-2); padding:var(--sp-4); border-radius:var(--radius-md);">
-                <div style="flex:1;">
-                  <h4 style="font-size:var(--fs-base);">Intro to Computer Science</h4>
-                  <p style="font-size:var(--fs-xs); color:var(--clr-text-muted);">Dr. Peterson • 3 Credits</p>
-                </div>
-                <div style="width:200px; margin-right:var(--sp-6);">
-                  <div style="display:flex; justify-content:space-between; margin-bottom:4px; font-size:var(--fs-xs);"><span>Progress</span><span>98%</span></div>
-                  <div style="height:6px; background:var(--clr-surface); border-radius:3px; overflow:hidden;"><div style="width:98%; height:100%; background:var(--clr-accent);"></div></div>
-                </div>
-                <div style="font-size:var(--fs-xl); font-weight:var(--fw-bold); color:var(--clr-accent); width:40px; text-align:right;">A</div>
-              </div>
-
-              <div style="display:flex; justify-content:space-between; align-items:center; background:var(--clr-surface-2); padding:var(--sp-4); border-radius:var(--radius-md);">
-                <div style="flex:1;">
-                  <h4 style="font-size:var(--fs-base);">Calculus III</h4>
-                  <p style="font-size:var(--fs-xs); color:var(--clr-text-muted);">Prof. Davis • 4 Credits</p>
-                </div>
-                <div style="width:200px; margin-right:var(--sp-6);">
-                  <div style="display:flex; justify-content:space-between; margin-bottom:4px; font-size:var(--fs-xs);"><span>Progress</span><span>84%</span></div>
-                  <div style="height:6px; background:var(--clr-surface); border-radius:3px; overflow:hidden;"><div style="width:84%; height:100%; background:var(--clr-accent-warm);"></div></div>
-                </div>
-                <div style="font-size:var(--fs-xl); font-weight:var(--fw-bold); color:var(--clr-accent-warm); width:40px; text-align:right;">B</div>
-              </div>
-
+            <div id="grades-state" style="font-size:var(--fs-sm); color:var(--clr-text-muted); margin-bottom:var(--sp-3);">Loading grades...</div>
+            <div id="grades-list" style="display:flex; flex-direction:column; gap:var(--sp-3);">
             </div>
           </div>
 
@@ -206,6 +170,10 @@
       </div>
     </main>
   </div>
+  <script src="js/api.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/auth.js"></script>
   <script src="js/dashboard.js"></script>
+  <script src="js/grades.js"></script>
 </body>
 </html>
